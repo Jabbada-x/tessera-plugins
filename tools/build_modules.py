@@ -112,11 +112,20 @@ def main():
                 print(f'skipped      {name} {version}: {reason}')
                 continue
             body = file.read_bytes() if done.returncode == 0 and file.is_file() else b''
-            why = plugin_module.fits(body, name, version, number) if body else 'it did not compile'
+            if not body:
+                # A plugin that does not compile for the browser (it uses a part of ESPHome the preview does not
+                # stand in for) is no failure of this run: it is listed with the compiler's first word on it, keeps
+                # its placeholder in the editor, and is tried again for the next number or its next release.
+                file.unlink(missing_ok=True)
+                errors = [line.strip() for line in done.stderr.splitlines() if 'error' in line]
+                reason = 'it does not compile for the browser' + (f': {errors[0][-160:]}' if errors else '')
+                skipped.setdefault(name, {})[version] = reason
+                print(f'skipped      {name} {version}: {reason}')
+                continue
+            why = plugin_module.fits(body, name, version, number)
             if why:
                 file.unlink(missing_ok=True)
-                errors = [line for line in done.stderr.splitlines() if 'error' in line][:3]
-                print(f'not built    {name} {version}: {why}' + ''.join(f'\n    {line[-200:]}' for line in errors))
+                print(f'not built    {name} {version}: {why}')
                 failed += 1
                 continue
             modules.setdefault(name, {})[version] = {'sha256': hashlib.sha256(body).hexdigest(), 'bytes': len(body)}
