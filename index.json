@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-22T12:12:37Z",
+ "generated": "2026-11-24T04:39:36Z",
  "plugin_api": "0.28",
  "blocked": [],
  "featured": [
@@ -32,6 +32,16 @@
    "repo": "https://github.com/maxgramser/tessera-plugins",
    "repo_id": 1408945265,
    "path": "plugins/cinema"
+  },
+  "code_lock": {
+   "repo": "https://github.com/mifricke/tessera-keypad",
+   "repo_id": 1444669159,
+   "path": "."
+  },
+  "creality": {
+   "repo": "https://github.com/willobarboza/plugins_tessera",
+   "repo_id": 1448269588,
+   "path": "plugins/creality"
   },
   "custom_card": {
    "repo": "https://github.com/stofle/tessera-plugin-custom-card",
@@ -72,6 +82,16 @@
    "repo": "https://github.com/maxgramser/tessera-plugins",
    "repo_id": 1408945265,
    "path": "plugins/guition_relays"
+  },
+  "ha_task_list": {
+   "repo": "https://github.com/woldhek/tessera-plugin-task-list",
+   "repo_id": 1452723640,
+   "path": "."
+  },
+  "jellyfin": {
+   "repo": "https://github.com/willobarboza/plugins_tessera",
+   "repo_id": 1448269588,
+   "path": "plugins/jellyfin"
   },
   "microplant": {
    "repo": "https://github.com/alexscemo/tessera-microplant",
@@ -128,6 +148,11 @@
    "repo_id": 1408945265,
    "path": "plugins/screen_camera"
   },
+  "select_buttons": {
+   "repo": "https://github.com/woldhek/tessera-plugin-select-buttons",
+   "repo_id": 1452752433,
+   "path": "."
+  },
   "status_tile": {
    "repo": "https://github.com/hflocki/tessera-status",
    "repo_id": 1427953388,
@@ -136,6 +161,11 @@
   "sweden_public_transport": {
    "repo": "https://github.com/exhalesthlm/tessera-plugin-sweden-public-transport",
    "repo_id": 1423224231,
+   "path": "."
+  },
+  "swiss_departures": {
+   "repo": "https://github.com/synergyx26/tessera-swiss-departures",
+   "repo_id": 1466009991,
    "path": "."
   },
   "tankerkoenig": {
@@ -4502,6 +4532,525 @@
    "image": "store.png"
   },
   {
+   "id": "code_lock",
+   "repo": "https://github.com/mifricke/tessera-keypad",
+   "repo_id": 1444669159,
+   "path": ".",
+   "label": "community",
+   "status": "ok",
+   "release": {
+    "version": "0.6.0",
+    "sha": "6aab25fcffe60aedd96528ce6c3b5c682c54a87d",
+    "date": "2026-11-04",
+    "tag": "v0.6.0"
+   },
+   "manifest": {
+    "id": "code_lock",
+    "version": "0.6.0",
+    "api": "0.15",
+    "icon": "lock",
+    "maintainer": "mifricke",
+    "license": "MIT",
+    "stage": "beta",
+    "topics": [
+     "home"
+    ],
+    "requires": {
+     "esphome": "2026.6.2"
+    },
+    "boards": "any",
+    "flash_kb": 12,
+    "permissions": {
+     "home_assistant_actions": [
+      "lock.unlock",
+      "cover.open_cover",
+      "switch.toggle",
+      "input_boolean.toggle",
+      "light.toggle",
+      "script.turn_on",
+      "scene.turn_on",
+      "button.press",
+      "lock.lock",
+      "cover.close_cover",
+      "switch.turn_off",
+      "input_boolean.turn_off",
+      "light.turn_off"
+     ]
+    },
+    "tiles": [
+     {
+      "id": "keypad",
+      "name": "tile_name",
+      "icon": "lock",
+      "sizes": {
+       "min": "1x1",
+       "max": "9x9"
+      },
+      "memory": 500,
+      "example": "tile_example",
+      "options": [
+       {
+        "id": "target",
+        "kind": "entity",
+        "domains": [
+         "lock",
+         "cover",
+         "switch",
+         "input_boolean",
+         "light",
+         "script",
+         "scene",
+         "button"
+        ],
+        "label": "target",
+        "hint": "target_hint"
+       },
+       {
+        "id": "code",
+        "kind": "text",
+        "label": "code",
+        "hint": "code_hint"
+       },
+       {
+        "id": "code_entity",
+        "kind": "entity",
+        "domains": [
+         "input_text",
+         "text"
+        ],
+        "label": "code_entity",
+        "hint": "code_entity_hint"
+       },
+       {
+        "id": "free_close",
+        "kind": "toggle",
+        "label": "free_close",
+        "hint": "free_close_hint",
+        "default": false
+       },
+       {
+        "id": "auto_check",
+        "kind": "toggle",
+        "label": "auto_check",
+        "hint": "auto_check_hint",
+        "default": true
+       },
+       {
+        "id": "attempts",
+        "kind": "number",
+        "label": "attempts",
+        "hint": "attempts_hint",
+        "min": 1,
+        "max": 10,
+        "default": 3
+       },
+       {
+        "id": "wait",
+        "kind": "number",
+        "label": "wait",
+        "hint": "wait_hint",
+        "min": 5,
+        "max": 600,
+        "step": 5,
+        "unit": "s",
+        "default": 30
+       }
+      ]
+     }
+    ],
+    "cards": [
+     {
+      "id": "keys",
+      "name": "card_name"
+     }
+    ]
+   },
+   "translations": {
+    "de": {
+     "_meta": {
+      "name": "Deutsch"
+     },
+     "screen": {
+      "choose": "Entität wählen",
+      "no_code": "Code festlegen",
+      "enter": "Code eingeben",
+      "tap": "Tippen, um den Code einzugeben",
+      "wrong": "Falscher Code",
+      "right": "Gesendet",
+      "failed": "Nicht gesendet. Ist das Display verbunden?",
+      "blocked": "Erneut in {n} s",
+      "locked": "Verriegelt",
+      "unlocked": "Entriegelt",
+      "open": "Offen",
+      "closed": "Geschlossen",
+      "on": "An",
+      "off": "Aus",
+      "unavailable": "Nicht verfügbar",
+      "no_helper_code": "Kein Code aus Home Assistant",
+      "tap_lock": "Tippen zum Verriegeln",
+      "tap_close": "Tippen zum Schließen",
+      "tap_off": "Tippen zum Ausschalten"
+     },
+     "app": {
+      "name": "Keypad",
+      "summary": "Ein Tastenfeld auf dem Display: Der richtige Code entriegelt ein Schloss, öffnet ein Tor oder schaltet ein Licht, ein Skript oder eine Szene.",
+      "tile_name": "Keypad",
+      "tile_example": "Code eingeben, um zu schalten",
+      "card_name": "Tastenfeld",
+      "target": "Entität",
+      "target_hint": "Was der richtige Code schaltet: ein Schloss, ein Tor, einen Schalter, ein Licht, ein Skript, eine Szene oder einen Knopf.",
+      "code": "Code",
+      "code_hint": "4 bis 8 Ziffern. Das Display prüft ihn, er liegt also auf dem Display: als Komfort gedacht, nicht als einziges Schloss.",
+      "code_entity": "Code aus einem Helfer",
+      "code_entity_hint": "Statt des Codes oben: eine input_text- oder text-Entität, deren Zustand der Code ist (4 bis 16 Ziffern). Ein neuer Code dort gilt nach Sekunden, ohne Neubau. Der Code steht im Klartext im Verlauf von Home Assistant: Schließe den Helfer vom Recorder aus.",
+      "free_close": "Code nur zum Öffnen",
+      "free_close_hint": "An: Ein Tipp verriegelt ein Schloss, schließt ein Tor oder schaltet ein Licht, einen Schalter oder einen Input Boolean sofort aus, ohne Code. Entriegeln, Öffnen und Einschalten brauchen weiterhin den Code. Skripte, Szenen und Knöpfe immer.",
+      "auto_check": "Code automatisch prüfen",
+      "auto_check_hint": "An: Der Code wird geprüft, sobald seine letzte Ziffer getippt ist. Aus: Erst der Haken prüft ihn, so verrät das Tastenfeld nie, wie lang der Code ist.",
+      "attempts": "Falsche Versuche",
+      "attempts_hint": "Nach so vielen falschen Codes in Folge wartet das Tastenfeld, bevor es wieder einen annimmt.",
+      "wait": "Wartezeit nach falschen Versuchen",
+      "wait_hint": "Wie lange das Tastenfeld wartet, in Sekunden."
+     }
+    },
+    "en": {
+     "_meta": {
+      "name": "English"
+     },
+     "screen": {
+      "choose": "Choose an entity",
+      "no_code": "Set a code",
+      "enter": "Enter the code",
+      "tap": "Tap to enter the code",
+      "wrong": "Wrong code",
+      "right": "Sent",
+      "failed": "Not sent. Is the screen connected?",
+      "blocked": "Try again in {n} s",
+      "locked": "Locked",
+      "unlocked": "Unlocked",
+      "open": "Open",
+      "closed": "Closed",
+      "on": "On",
+      "off": "Off",
+      "unavailable": "Unavailable",
+      "no_helper_code": "No code from Home Assistant",
+      "tap_lock": "Tap to lock",
+      "tap_close": "Tap to close",
+      "tap_off": "Tap to switch off"
+     },
+     "app": {
+      "name": "Keypad",
+      "summary": "A keypad on the screen: the right code unlocks a lock, opens a cover or switches a light, a script or a scene.",
+      "tile_name": "Keypad",
+      "tile_example": "Enter the code to switch it",
+      "card_name": "Keypad",
+      "target": "Entity",
+      "target_hint": "What the right code switches: a lock, a cover, a switch, a light, a script, a scene or a button.",
+      "code": "Code",
+      "code_hint": "4 to 8 digits. The screen checks it, so it is stored on the screen: use it for convenience, not as your only lock.",
+      "code_entity": "Code from a helper",
+      "code_entity_hint": "Instead of the code above: an input_text or text entity whose state is the code (4 to 16 digits). A new code there counts within seconds, without a build. The code is plain text in Home Assistant's history: leave the helper out of the recorder.",
+      "free_close": "Code only to open",
+      "free_close_hint": "On: a tap locks a lock, closes a cover or switches a light, switch or input boolean off at once, without the code. Unlocking, opening and switching on still take the code. Scripts, scenes and buttons always take it.",
+      "auto_check": "Check the code by itself",
+      "auto_check_hint": "On: the code is checked as soon as its last digit is typed. Off: only the check key checks it, so the keypad never tells how long the code is.",
+      "attempts": "Wrong tries",
+      "attempts_hint": "After this many wrong codes in a row the keypad waits before it takes another.",
+      "wait": "Wait after wrong tries",
+      "wait_hint": "How long the keypad waits, in seconds."
+     }
+    }
+   },
+   "readme": {
+    "en": "# Keypad\n\nA keypad on your Tessera screen. Type the right code and the screen runs an action in Home Assistant: it unlocks a\nlock, opens a garage door, switches a light or a switch, runs a script or a scene, or presses a button.\n\n> The code is checked on the screen, so it is stored in the screen's layout and on the screen itself. Use it for\n> convenience, such as letting family in, and not as the only protection of a door.\n\n## Set up\n\n1. In Tessera, open **Plugins**, choose **Add with a link** and paste `https://github.com/mifricke/tessera-keypad`.\n2. Add the plugin to a screen. The screen builds once.\n3. In **Layout**, place the **Keypad** tile from the library's Plugins group.\n4. In the inspector, search for and choose the **Entity** the code switches, and fill in the **Code** (4 to 8 digits).\n   The list offers only entities the code can switch.\n5. Tap the tile on the screen, type the code, and the action runs.\n\n## What the right code does\n\n| Entity | Action |\n|---|---|\n| Lock | `lock.unlock` |\n| Cover (a garage door, a gate) | `cover.open_cover` |\n| Switch | `switch.toggle` |\n| Input boolean | `input_boolean.toggle` |\n| Light | `light.toggle` |\n| Script | `script.turn_on` |\n| Scene | `scene.turn_on` |\n| Button | `button.press` |\n\nTo do something else, such as sending a notification or opening two locks, write a script in Home Assistant and choose\nthat script on the tile.\n\n## Options\n\n- **Entity**: what the right code switches, chosen from a list you can search.\n- **Code**: the digits that open.\n- **Code only to open**: off (the default), every tap opens the keypad. On, a tap locks a lock, closes a cover or\n  switches a light, switch or input boolean off at once, without the code; the tile says so (\"Tap to lock\").\n  Unlocking, opening and switching on still take the code, and a script, a scene or a button always does.\n- **Check the code by itself**: on (the default), the keypad checks the code as soon as its last digit is typed, so\n  no check key is needed. Off, only the check key checks it: the keypad then never tells how long the code is.\n- **Code from a helper**: instead of typing the code into the tile, choose a helper in Home Assistant that holds it\n  (below). When a helper is chosen, its code counts and the **Code** above is not used.\n- **Wrong tries** and **Wait after wrong tries**: after this many wrong codes in a row the keypad takes no code for a\n  while and counts down.\n\n## The code from a helper in Home Assistant\n\nThe code can live in Home Assistant instead of in Tessera, so it can be changed there, or by an automation, without\nopening Tessera and without building the screen again.\n\n1. In Home Assistant, open **Settings**, **Devices & services**, **Helpers**, and create a **Text** helper. Set its\n   mode to **Password** so the code is hidden in the dashboard, and its maximum length to 16.\n2. Type the code as its value: 4 to 16 digits.\n3. In Tessera, choose that helper under **Code from a helper** on the tile.\n\nA new value counts within seconds, also on a keypad that is open. While the helper is unavailable, or holds anything\nbut digits, the keypad takes no code at all and says so.\n\nThe Password mode only hides the code in Home Assistant's dashboard. The state itself is plain text: it is in the\nhistory and the logbook, and everyone who can use Home Assistant or its API can read it. Leave the helper out of the\nrecorder (`recorder:` `exclude:` `entities:` in `configuration.yaml`). As with a code typed into the tile, the screen\nchecks the code, so it also reaches the screen.\n\n## Tried on\n\n- On a real screen: the Guition 4848S040 (4-inch, 480 x 480), with a light switched by the right code.\n- On the plugin bench (the real firmware, built for a computer): the 2.8-inch CYD, the Guition 4848S040, a 4.3-inch\n  Waveshare standing up and a 10.1-inch Guition JC8012P4A1, light and dark, at every size the tile offers there.\n\n## Good to know\n\n- The screen must be allowed to perform actions in Home Assistant (Tessera sets this up when it adds a screen).\n- A light, a switch and an input boolean are switched over: off goes on, on goes off.\n- The keypad closes by itself a moment after the right code. When the code could not be sent, it says so and stays\n  open.\n- The X key clears what was typed.\n"
+   },
+   "changelog": {
+    "en": "# Changelog\n\n## 0.6.0\n- New option **Code only to open**, off by default. Turned on, a tap locks a lock, closes a cover or switches a light,\n  switch or input boolean off without the code, and the tile says so. Unlocking, opening and switching on still take\n  the code.\n\n## 0.5.1\n- The tile's example line in the editor no longer speaks of unlocking only: it fits every entity the code can switch.\n\n## 0.5.0\n- New option **Check the code by itself**, on by default as before. Turned off, only the check key checks the code,\n  so the keypad never tells how long the code is.\n- The tile takes any size the screen's grid offers, up to 9 x 9; a large tile shows its name and state in larger\n  words.\n\n## 0.4.0\n- New option **Code from a helper**: the code can come from an input_text or text helper in Home Assistant instead of\n  the tile. A new code there counts within seconds, without building the screen again. A code typed into the tile\n  keeps working as before when no helper is chosen.\n\n## 0.3.2\n- The plugin and its tile are called Keypad now, in every language.\n\n## 0.3.1\n- On the smallest screens (the 2.8-inch CYD) the keypad's keys fit the glass: before, the lowest row was cut off.\n\n## 0.3.0\n- The right code switches a light, a switch or an input boolean over, whatever it is now. Before, it only turned them\n  on, so a light that was already on did nothing.\n- The keypad looks like Tessera's own: round keys, OK in the accent colour, and dots like a PIN field that never show\n  how long the code is. On wide glass the dots stand beside the keys.\n- The keypad says whether the code went out (\"Sent\") or could not be sent, and keys that do nothing now stand back.\n\n## 0.2.0\n- The entity is chosen from a list you can search, and the list offers only entities the code can switch: locks,\n  covers, switches, input booleans, lights, scripts, scenes and buttons. Choose the entity of each tile again.\n- Gone: the option to pass the code to the lock. The screen always checks the code.\n\n## 0.1.0\n- First version: a tile that opens a keypad, and the right code unlocks a lock or runs a script, a scene, a button,\n  a switch, an automation or a cover.\n"
+   },
+   "image": "store.png"
+  },
+  {
+   "id": "creality",
+   "repo": "https://github.com/willobarboza/plugins_tessera",
+   "repo_id": 1448269588,
+   "path": "plugins/creality",
+   "label": "community",
+   "status": "ok",
+   "release": {
+    "version": "0.1.0",
+    "sha": "82008832b0e6f9eb6d1ccf32ae5f9a45f0e0bfde",
+    "date": "2026-11-20",
+    "tag": "creality-v0.1.0"
+   },
+   "manifest": {
+    "id": "creality",
+    "version": "0.1.0",
+    "api": "0.15",
+    "icon": "printer-3d",
+    "maintainer": "willobarboza",
+    "license": "MIT",
+    "stage": "beta",
+    "topics": [
+     "tech",
+     "home"
+    ],
+    "requires": {
+     "esphome": "2026.6.2"
+    },
+    "boards": "any",
+    "flash_kb": 20,
+    "permissions": {
+     "home_assistant_actions": [
+      "button.press",
+      "light.toggle",
+      "switch.toggle"
+     ]
+    },
+    "tiles": [
+     {
+      "id": "printer",
+      "name": "printer_name",
+      "icon": "printer-3d",
+      "sizes": {
+       "min": "1x1",
+       "max": "9x9"
+      },
+      "memory": 2100,
+      "domains": [
+       "sensor"
+      ],
+      "attributes": [
+       "file",
+       "progress",
+       "job_time_s",
+       "left_time_s",
+       "error_code"
+      ],
+      "example": "printer_example",
+      "options": [
+       {
+        "id": "nozzle",
+        "kind": "entity",
+        "domains": [
+         "sensor"
+        ],
+        "attributes": [
+         "unit_of_measurement"
+        ],
+        "label": "nozzle",
+        "hint": "nozzle_hint"
+       },
+       {
+        "id": "bed",
+        "kind": "entity",
+        "domains": [
+         "sensor"
+        ],
+        "attributes": [
+         "unit_of_measurement"
+        ],
+        "label": "bed"
+       },
+       {
+        "id": "chamber",
+        "kind": "entity",
+        "domains": [
+         "sensor"
+        ],
+        "attributes": [
+         "unit_of_measurement"
+        ],
+        "label": "chamber"
+       },
+       {
+        "id": "layer",
+        "kind": "entity",
+        "domains": [
+         "sensor"
+        ],
+        "label": "layer",
+        "hint": "layer_hint"
+       },
+       {
+        "id": "total_layers",
+        "kind": "entity",
+        "domains": [
+         "sensor"
+        ],
+        "label": "total_layers"
+       },
+       {
+        "id": "light",
+        "kind": "entity",
+        "domains": [
+         "light",
+         "switch"
+        ],
+        "label": "light",
+        "hint": "light_hint"
+       },
+       {
+        "id": "pause",
+        "kind": "entity",
+        "domains": [
+         "button"
+        ],
+        "label": "pause",
+        "hint": "buttons_hint"
+       },
+       {
+        "id": "resume",
+        "kind": "entity",
+        "domains": [
+         "button"
+        ],
+        "label": "resume"
+       },
+       {
+        "id": "stop",
+        "kind": "entity",
+        "domains": [
+         "button"
+        ],
+        "label": "stop"
+       }
+      ]
+     }
+    ],
+    "cards": [
+     {
+      "id": "control",
+      "name": "control_name",
+      "wide": true
+     }
+    ]
+   },
+   "translations": {
+    "en": {
+     "_meta": {
+      "name": "English"
+     },
+     "screen": {
+      "loading": "Waiting for the printer",
+      "too_large": "No data",
+      "offline": "Offline",
+      "off": "Off",
+      "idle": "Idle",
+      "processing": "Preparing",
+      "printing": "Printing",
+      "paused": "Paused",
+      "stopped": "Stopped",
+      "completed": "Done",
+      "error": "Error",
+      "testing": "Self-test",
+      "ready": "Ready to print",
+      "duration_hm": "{h}h {m}m",
+      "duration_m": "{m} min",
+      "left": "{t} left",
+      "done_at": "Done at {t}",
+      "error_n": "Error {n}",
+      "nozzle_t": "Nozzle {t}",
+      "bed_t": "Bed {t}",
+      "chamber_t": "Chamber {t}",
+      "layer_of": "Layer {n} of {total}",
+      "layer_n": "Layer {n}",
+      "name_fallback": "3D printer",
+      "choose_status": "Choose the printer's Print Status sensor in the inspector",
+      "choose_keys": "Choose the printer's buttons and light in the tile's inspector for keys",
+      "sent": "Sent to the printer",
+      "stop_confirm": "Tap stop again to stop the print",
+      "stop_sent": "Stopping the print",
+      "not_sent": "Not sent: may the screen perform actions?"
+     },
+     "app": {
+      "name": "Creality 3D printer",
+      "summary": "How your Creality printer's print goes, its temperatures, and keys to pause, resume and stop.",
+      "printer_name": "Creality printer",
+      "printer_example": "Printing Benchy, 42%, 1h 04m left",
+      "nozzle": "Nozzle temperature",
+      "nozzle_hint": "The printer's temperature sensors (Nozzle Temperature, Bed Temperature, Chamber Temperature). Leave out what it lacks or you do not want: the K1 SE, Ender 3 V3 and Hi have no chamber sensor.",
+      "bed": "Bed temperature",
+      "chamber": "Chamber temperature",
+      "layer": "Current layer",
+      "layer_hint": "The Working Layer and Total Layers sensors, for \"Layer 126 of 300\".",
+      "total_layers": "Total layers",
+      "light": "Light",
+      "light_hint": "The printer's light, for a key on the control card. The K1 SE and Ender 3 V3 have none.",
+      "pause": "Pause button",
+      "buttons_hint": "The integration's Pause Print, Resume Print and Stop Print buttons, for the keys of the control card.",
+      "resume": "Resume button",
+      "stop": "Stop button",
+      "control_name": "Creality printer control"
+     }
+    },
+    "pt": {
+     "_meta": {
+      "name": "Português"
+     },
+     "screen": {
+      "loading": "Aguardando a impressora",
+      "too_large": "Sem dados",
+      "offline": "Offline",
+      "off": "Desligada",
+      "idle": "Em espera",
+      "processing": "Preparando",
+      "printing": "Imprimindo",
+      "paused": "Pausada",
+      "stopped": "Interrompida",
+      "completed": "Concluída",
+      "error": "Erro",
+      "testing": "Autoteste",
+      "ready": "Pronta para imprimir",
+      "duration_hm": "{h}h {m}min",
+      "duration_m": "{m} min",
+      "left": "faltam {t}",
+      "done_at": "Termina às {t}",
+      "error_n": "Erro {n}",
+      "nozzle_t": "Bico {t}",
+      "bed_t": "Mesa {t}",
+      "chamber_t": "Câmara {t}",
+      "layer_of": "Camada {n} de {total}",
+      "layer_n": "Camada {n}",
+      "name_fallback": "Impressora 3D",
+      "choose_status": "Escolha o sensor Print Status da impressora no inspetor",
+      "choose_keys": "Escolha os botões e a luz da impressora no inspetor do tile",
+      "sent": "Enviado à impressora",
+      "stop_confirm": "Toque em parar de novo para interromper a impressão",
+      "stop_sent": "Interrompendo a impressão",
+      "not_sent": "Não enviado: a tela pode executar ações?"
+     },
+     "app": {
+      "name": "Impressora 3D Creality",
+      "summary": "Como vai a impressão da sua Creality, as temperaturas, e botões para pausar, retomar e parar.",
+      "printer_name": "Impressora Creality",
+      "printer_example": "Imprimindo Benchy, 42%, faltam 1h 04min",
+      "nozzle": "Temperatura do bico",
+      "nozzle_hint": "Os sensores de temperatura da impressora (Nozzle Temperature, Bed Temperature, Chamber Temperature). Deixe vazio o que ela não tem ou o que não quiser ver: a K1 SE, a Ender 3 V3 e a Hi não têm sensor de câmara.",
+      "bed": "Temperatura da mesa",
+      "chamber": "Temperatura da câmara",
+      "layer": "Camada atual",
+      "layer_hint": "Os sensores Working Layer e Total Layers, para \"Camada 126 de 300\".",
+      "total_layers": "Total de camadas",
+      "light": "Luz",
+      "light_hint": "A luz da impressora, para um botão no cartão de controle. A K1 SE e a Ender 3 V3 não têm luz.",
+      "pause": "Botão de pausar",
+      "buttons_hint": "Os botões Pause Print, Resume Print e Stop Print da integração, para os botões do cartão de controle.",
+      "resume": "Botão de retomar",
+      "stop": "Botão de parar",
+      "control_name": "Controle da impressora Creality"
+     }
+    }
+   },
+   "readme": {
+    "en": "# Creality 3D printer\n\nHow the print on your Creality printer goes: its state, the file, the progress, the time left and when it is done, the\ntemperatures and the layer; and a card with keys to pause, resume and stop the print and to switch the printer's light.\n\n**The camera is not in this plugin.** For the printer's camera, use Tessera's own camera tile (in the library's\nCameras group, with the printer's **Printer Camera**) and put it beside the printer tile. It refreshes the picture and\nopens it large, which a plugin's picture cannot do yet.\n\nIt works with the **Creality WebSocket Integration** for Home Assistant (`ha_creality_ws`, from HACS), for the K1, K1C,\nK1 Max, K1 SE, K2, Ender 3 V3 and Creality Hi printers. The screen never talks to the printer: Home Assistant does, and\nthe screen reads and controls the integration's entities.\n\n## Set up\n\n### 1. First, in Home Assistant\n\n1. Install **Creality WebSocket Integration** from HACS (its current version needs Home Assistant 2026.7 or newer),\n   restart Home Assistant, and add it (Settings > Devices & services > Add integration > Creality WebSocket\n   Integration) with your printer's address.\n2. Check the printer's device page. The plugin uses these of its entities: **Print Status**\n   (`sensor.<printer>_print_status`), **Nozzle Temperature**, **Bed Temperature**, **Chamber Temperature**, **Working\n   Layer**, **Total Layers**, the **Light**, the **Pause Print**, **Resume Print** and **Stop Print** buttons. Not\n   every printer has them all: the K1 SE and the Ender 3 V3 have no light, and the K1 SE, the Ender 3 V3 and the Hi\n   no chamber sensor. Leave those out in the inspector.\n3. Let the screen perform actions: Settings > Devices & services > ESPHome > your screen > **Configure** > tick\n   **Allow the device to perform Home Assistant actions**. Without it the keys do nothing.\n\n### 2. The tile\n\nAdd the plugin to a screen in Tessera (the screen builds once). In Layout, from the library's Plugins group:\n\n1. **Creality printer**: choose the printer's **Print Status** sensor as its entity. Then, in the inspector, its\n   temperature sensors, the working layer and total layers, the light and the three buttons. Leave out what you do not\n   want to see. A small tile shows the percent large; a larger one the state, the file, a bar, the time left and when\n   it is done, the temperatures and the layer.\n2. **The camera**: add Tessera's own camera tile with the printer's **Printer Camera**, beside the printer tile.\n\nChanging an entity in the inspector needs no build.\n\n### 3. The control card\n\n1. Tap the printer tile. The card shows the printer large.\n2. **Keys**: pause while it prints, resume while it is paused, stop, and the light. A key shows only when you chose its\n   entity in the tile's inspector and the printer is in a state where it does something.\n3. **Stop asks first**: the first tap turns the key red; tap it again within five seconds to stop the print.\n\n## Good to know\n\n- **When the printer is off.** With a power switch bound in the integration's options, the entities go unavailable\n  while it is off and the tile says \"Offline\".\n- **The time left** is the printer's own estimate, counted down by the screen between updates; \"Done at\" is the\n  screen's clock plus that time.\n\n## Tested\n\nOn Tessera's bench (CYD, Guition 4\", Waveshare 4.3\" portrait, JC8012P4A1), with no warnings, and on a real screen with a\nK1.\n",
+    "pt": "# Impressora 3D Creality\n\nComo vai a impressão na sua impressora Creality: o estado, o arquivo, o progresso, o tempo restante e a hora em que\ntermina, as temperaturas e a camada; e um cartão com botões para pausar, retomar e parar a impressão e para ligar e\ndesligar a luz da impressora.\n\n**A câmera não faz parte deste plugin.** Para a câmera da impressora, use o tile de câmera nativo do Tessera (no grupo\nCâmeras da biblioteca, com a **Printer Camera** da impressora) e coloque-o ao lado do tile da impressora. Ele atualiza\na imagem e a abre em tela cheia, o que a imagem de um plugin ainda não consegue.\n\nFunciona com a **Creality WebSocket Integration** do Home Assistant (`ha_creality_ws`, do HACS), para as impressoras\nK1, K1C, K1 Max, K1 SE, K2, Ender 3 V3 e Creality Hi. A tela nunca fala com a impressora: quem fala é o Home Assistant,\ne a tela lê e controla as entidades da integração.\n\n## Configurar\n\n### 1. Primeiro, no Home Assistant\n\n1. Instale a **Creality WebSocket Integration** pelo HACS (a versão atual pede o Home Assistant 2026.7 ou mais\n   novo), reinicie o Home Assistant e adicione a integração (Configurações > Dispositivos e serviços > Adicionar\n   integração > Creality WebSocket Integration) com o endereço da impressora.\n2. Confira a página do dispositivo da impressora. O plugin usa estas entidades: **Print Status**\n   (`sensor.<impressora>_print_status`), **Nozzle Temperature**, **Bed Temperature**, **Chamber Temperature**,\n   **Working Layer**, **Total Layers**, a **Light**, os botões **Pause Print**, **Resume Print** e **Stop Print**. Nem\n   toda impressora tem todas: a K1 SE e a Ender 3 V3 não têm luz, e a K1 SE, a Ender 3 V3 e a Hi não têm sensor de\n   câmara. Deixe essas vazias no inspetor.\n3. Permita que a tela execute ações: Configurações > Dispositivos e serviços > ESPHome > sua tela > **Configurar** >\n   marque **Permitir que o dispositivo execute ações do Home Assistant**. Sem isso os botões não fazem nada.\n\n### 2. O tile\n\nAdicione o plugin a uma tela no Tessera (a tela compila uma vez). Em Layout, no grupo Plugins da biblioteca:\n\n1. **Impressora Creality**: escolha o sensor **Print Status** da impressora como entidade. Depois, no inspetor, os\n   sensores de temperatura, a camada atual e o total de camadas, a luz e os três botões. Deixe vazio o que não quiser\n   ver. Um tile pequeno mostra o percentual grande; um maior mostra o estado, o arquivo, uma barra, o tempo restante e\n   a hora em que termina, as temperaturas e a camada.\n2. **A câmera**: adicione o tile de câmera nativo do Tessera com a **Printer Camera** da impressora, ao lado do tile\n   da impressora.\n\nTrocar uma entidade no inspetor não precisa compilar de novo.\n\n### 3. O cartão de controle\n\n1. Toque no tile da impressora. O cartão mostra a impressora em tamanho grande.\n2. **Botões**: pausar enquanto imprime, retomar enquanto está pausada, parar e a luz. Um botão só aparece quando você\n   escolheu a entidade dele no inspetor do tile e a impressora está num estado em que ele faz algo.\n3. **Parar pergunta antes**: o primeiro toque deixa o botão vermelho; toque de novo em até cinco segundos para\n   interromper a impressão.\n\n## Bom saber\n\n- **Com a impressora desligada.** Com uma tomada vinculada nas opções da integração, as entidades ficam indisponíveis\n  enquanto ela está desligada e o tile diz \"Offline\".\n- **O tempo restante** é a estimativa da própria impressora, contada regressivamente pela tela entre as atualizações;\n  \"Termina às\" é o relógio da tela mais esse tempo.\n\n## Testado\n\nNa bancada do Tessera (CYD, Guition 4\", Waveshare 4.3\" retrato, JC8012P4A1), sem avisos, e numa tela real com uma K1.\n"
+   },
+   "changelog": {
+    "en": "# Changelog\n\n## 0.1.0 - 2026-11-20\n- First version: a printer tile (state, file, progress, time left and when it is done, temperatures, layer) and a\n  control card (pause or resume, stop with a second tap to confirm, and the light). For the camera, use Tessera's own\n  camera tile. Needs the Creality WebSocket integration from HACS (see the README).\n"
+   },
+   "image": "store.png"
+  },
+  {
    "id": "custom_card",
    "repo": "https://github.com/stofle/tessera-plugin-custom-card",
    "repo_id": 1412296533,
@@ -7203,6 +7752,590 @@
    "image": "store.png"
   },
   {
+   "id": "ha_task_list",
+   "repo": "https://github.com/woldhek/tessera-plugin-task-list",
+   "repo_id": 1452723640,
+   "path": ".",
+   "label": "community",
+   "status": "ok",
+   "release": {
+    "version": "0.4.0",
+    "sha": "3afe08e919297889047883212357e00039428f87",
+    "date": "2026-11-10",
+    "tag": "v0.4.0"
+   },
+   "manifest": {
+    "id": "ha_task_list",
+    "version": "0.4.0",
+    "api": "0.18",
+    "icon": "format-list-bulleted",
+    "maintainer": "woldhek",
+    "license": "MIT",
+    "stage": "beta",
+    "topics": [
+     "home",
+     "tech"
+    ],
+    "flash_kb": 28,
+    "tiles": [
+     {
+      "id": "tasks",
+      "name": "task_list",
+      "icon": "format-list-bulleted",
+      "sizes": {
+       "min": "1x1",
+       "max": "3x4"
+      },
+      "memory": 2900,
+      "domains": [
+       "todo"
+      ],
+      "example": "tile_example",
+      "options": [
+       {
+        "id": "show_completed",
+        "kind": "toggle",
+        "label": "show_completed",
+        "hint": "show_completed_hint",
+        "default": false
+       },
+       {
+        "id": "tick_off",
+        "kind": "toggle",
+        "label": "tick_off",
+        "hint": "tick_off_hint",
+        "default": true
+       },
+       {
+        "id": "confirm",
+        "kind": "toggle",
+        "label": "confirm",
+        "hint": "confirm_hint",
+        "default": false
+       }
+      ]
+     }
+    ],
+    "cards": [
+     {
+      "id": "list",
+      "name": "card_name"
+     }
+    ],
+    "permissions": {
+     "read_entities": [
+      "todo"
+     ],
+     "home_assistant_actions": [
+      "todo.update_item"
+     ],
+     "ha_commands": [
+      "call_service:todo.get_items"
+     ]
+    }
+   },
+   "translations": {
+    "en": {
+     "_meta": {
+      "name": "English"
+     },
+     "screen": {
+      "no_tasks": "Nothing on this list",
+      "choose_list": "Choose a to-do list for this tile",
+      "loading": "Loading…",
+      "failed": "Could not load the list",
+      "more": "{n} more",
+      "today": "Today",
+      "overdue": "Overdue",
+      "page": "{page} / {pages}",
+      "confirm_done": "Tick this off?",
+      "confirm_open": "Mark as not done?",
+      "cancel": "Cancel",
+      "tick": "Tick off",
+      "untick": "Not done"
+     },
+     "app": {
+      "name": "Task List",
+      "summary": "Your Home Assistant to-do lists on the screen: tick off tasks and page through the whole list.",
+      "task_list": "Tasks",
+      "tile_example": "Groceries, call the plumber",
+      "show_completed": "Show completed tasks",
+      "show_completed_hint": "Done tasks stay on the tile, at the bottom, until you clear them in Home Assistant.",
+      "card_name": "Whole list",
+      "tick_off": "Tasks can be ticked off",
+      "tick_off_hint": "Off: the list is only to read, and a tap anywhere opens the whole list.",
+      "confirm": "Ask before ticking off",
+      "confirm_hint": "A popup asks first, so a task is not ticked off (or on) by accident."
+     }
+    },
+    "nl": {
+     "_meta": {
+      "name": "Nederlands"
+     },
+     "screen": {
+      "no_tasks": "Niets op deze lijst",
+      "choose_list": "Kies een takenlijst voor deze tegel",
+      "loading": "Laden…",
+      "failed": "Kan de lijst niet laden",
+      "more": "nog {n}",
+      "today": "Vandaag",
+      "overdue": "Te laat",
+      "page": "{page} / {pages}",
+      "confirm_done": "Afvinken?",
+      "confirm_open": "Weer open zetten?",
+      "cancel": "Annuleren",
+      "tick": "Afvinken",
+      "untick": "Niet klaar"
+     },
+     "app": {
+      "name": "Takenlijst",
+      "summary": "Je Home Assistant-takenlijsten op het scherm: vink taken af en blader door de hele lijst.",
+      "task_list": "Taken",
+      "tile_example": "Boodschappen, loodgieter bellen",
+      "show_completed": "Afgeronde taken tonen",
+      "show_completed_hint": "Afgeronde taken blijven onderaan op de tegel staan tot je ze in Home Assistant opruimt.",
+      "card_name": "Hele lijst",
+      "tick_off": "Taken afvinken",
+      "tick_off_hint": "Uit: de lijst is alleen om te lezen, en een tik waar dan ook opent de hele lijst.",
+      "confirm": "Vragen voor afvinken",
+      "confirm_hint": "Een popup vraagt het eerst, zodat je niet per ongeluk een taak afvinkt (of weer opent)."
+     }
+    }
+   },
+   "readme": {
+    "en": "# Task List\n\nYour Home Assistant to-do lists (`todo` entities) on a Tessera screen: Local To-do, Shopping List, Google Tasks,\nTodoist, CalDAV and any other integration that makes a to-do list.\n\n- Every task is a row with a round checkbox: tap it to tick the task off, tap again to untick it (unless the tile is\n  set to only show the list).\n- A task with a due date or a description shows it on a second line. \"Overdue\" is red, \"Today\" amber. Not every\n  integration keeps due dates (the Shopping List does not).\n- The tile shows as many tasks as fit, then \"3 more\". Tap there, or anywhere below the tasks, to open the whole list on\n  a card, and page through it with the arrows at the bottom.\n- Done tasks stay out of sight unless you turn on **Show completed tasks**; on the card they always show, at the bottom.\n\nA list shows up to about 25 to 30 tasks: what fits in one answer from Home Assistant to the screen.\n\n## Screens it was tried on\n\n- Guition 4-inch (480 x 480): the tile and its card, ticking tasks off and on, and the popup that asks first (0.4.0).\n\nNot tried yet on the CYD or a 10-inch screen. Tell me how it goes in an issue.\n\n## What you need\n\n- Tessera 0.4.91 or later (plugin API 0.18 for the popup that asks first).\n- A to-do list in Home Assistant.\n\n## Set up\n\n1. Add the plugin to a screen in the Tessera app.\n2. In Layout, place the **Tasks** tile from the plugin library.\n3. In the inspector, choose your to-do list as the tile's entity.\n4. Optionally, turn on **Show completed tasks**, turn on **Ask before ticking off** for a popup that asks first, or\n   turn off **Tasks can be ticked off** for a list that is only to read.\n5. Build and install the screen.\n"
+   },
+   "changelog": {
+    "en": "# Changelog\n\n## 0.4.0\n- New tile option: Ask before ticking off (off by default). A popup with the task's name asks first, on the tile and\n  on the card, so a task is not ticked off (or opened again) by accident.\n- Needs Tessera with plugin API 0.18 or later (the release 0.4.91 has 0.24).\n## 0.3.0\n- New tile option: Tasks can be ticked off (on by default). Turn it off for a list that is only to read: a tap then\n  opens the whole list, and the card does not tick tasks either.\n## 0.2.1\n- The tile takes half the memory it did (2.9 KB instead of 6 KB of the screen's room for tiles): fewer parts per row,\n  at most eight rows, spread out over a tall tile.\n- The tile keeps only the tasks it shows, which matters on a screen without PSRAM (the CYD).\n## 0.2.0\n- A new look: every task is a row with a round checkbox, and done tasks are greyed out.\n- When a task has a due date or a description, it shows under the task: \"Today\", \"Tomorrow\", \"Overdue\" in red.\n- The tile shows as many tasks as fit and \"3 more\" when the list is longer; tap there to open the whole list on a\n  card and page through it with the arrows at the bottom.\n- New tile option: Show completed tasks (off by default).\n- Tap a task on the tile or the card to tick it off or untick it.\n## 0.1.1\n- Make it work?\n## 0.1.0\n- First version: a tile that counts the days until a date you choose.\n"
+   },
+   "image": "store.png"
+  },
+  {
+   "id": "jellyfin",
+   "repo": "https://github.com/willobarboza/plugins_tessera",
+   "repo_id": 1448269588,
+   "path": "plugins/jellyfin",
+   "label": "community",
+   "status": "ok",
+   "release": {
+    "version": "0.1.3",
+    "sha": "82008832b0e6f9eb6d1ccf32ae5f9a45f0e0bfde",
+    "date": "2026-11-20",
+    "tag": "creality-v0.1.0"
+   },
+   "manifest": {
+    "id": "jellyfin",
+    "version": "0.1.3",
+    "api": "0.17",
+    "icon": "television-play",
+    "maintainer": "willobarboza",
+    "license": "MIT",
+    "stage": "beta",
+    "topics": [
+     "media"
+    ],
+    "requires": {
+     "esphome": "2026.6.2"
+    },
+    "boards": "any",
+    "flash_kb": 24,
+    "permissions": {
+     "home_assistant_actions": [
+      "media_player.media_play_pause",
+      "media_player.media_seek",
+      "media_player.media_stop",
+      "media_player.volume_up",
+      "media_player.volume_down",
+      "media_player.volume_mute",
+      "media_player.play_media"
+     ],
+     "ha_commands": [
+      "media_player/browse_media"
+     ]
+    },
+    "tiles": [
+     {
+      "id": "now_playing",
+      "name": "now_name",
+      "icon": "television-play",
+      "sizes": {
+       "min": "1x1",
+       "max": "9x9"
+      },
+      "memory": 1600,
+      "pictures": 1,
+      "domains": [
+       "media_player"
+      ],
+      "attributes": [
+       "media_title",
+       "media_series_title",
+       "media_season",
+       "media_episode",
+       "media_artist",
+       "media_album_name",
+       "media_duration",
+       "media_position",
+       "media_position_updated_at",
+       "supported_features",
+       "is_volume_muted"
+      ],
+      "example": "now_example",
+      "options": [
+       {
+        "id": "jump",
+        "kind": "number",
+        "min": 5,
+        "max": 120,
+        "step": 5,
+        "unit": "s",
+        "default": 30,
+        "label": "jump",
+        "hint": "jump_hint"
+       }
+      ]
+     },
+     {
+      "id": "sessions",
+      "name": "sessions_name",
+      "icon": "account-group",
+      "sizes": {
+       "min": "1x1",
+       "max": "9x9"
+      },
+      "memory": 6000,
+      "example": "sessions_example",
+      "options": [
+       {
+        "id": "session_1",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_1",
+        "hint": "session_hint"
+       },
+       {
+        "id": "session_2",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_2"
+       },
+       {
+        "id": "session_3",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_3"
+       },
+       {
+        "id": "session_4",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_4"
+       },
+       {
+        "id": "session_5",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_5"
+       },
+       {
+        "id": "session_6",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_6"
+       },
+       {
+        "id": "session_7",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_7"
+       },
+       {
+        "id": "session_8",
+        "kind": "entity",
+        "domains": [
+         "media_player"
+        ],
+        "attributes": [
+         "media_title",
+         "media_series_title",
+         "media_season",
+         "media_episode",
+         "media_artist",
+         "media_duration",
+         "media_position",
+         "media_position_updated_at",
+         "supported_features",
+         "is_volume_muted"
+        ],
+        "label": "session_8"
+       },
+       {
+        "id": "names",
+        "kind": "text",
+        "label": "names",
+        "hint": "names_hint"
+       },
+       {
+        "id": "active_only",
+        "kind": "toggle",
+        "default": false,
+        "label": "active_only",
+        "hint": "active_only_hint"
+       },
+       {
+        "id": "jump",
+        "kind": "number",
+        "min": 5,
+        "max": 120,
+        "step": 5,
+        "unit": "s",
+        "default": 30,
+        "label": "jump",
+        "hint": "jump_hint"
+       }
+      ]
+     }
+    ],
+    "cards": [
+     {
+      "id": "control",
+      "name": "control_name",
+      "wide": true,
+      "pictures": 1
+     },
+     {
+      "id": "library",
+      "name": "library_name",
+      "wide": true
+     }
+    ]
+   },
+   "translations": {
+    "en": {
+     "_meta": {
+      "name": "English"
+     },
+     "screen": {
+      "playing": "Playing",
+      "paused": "Paused",
+      "idle": "Idle",
+      "off": "Off",
+      "offline": "Offline",
+      "too_large": "No data",
+      "loading": "Loading…",
+      "waiting": "Waiting for the player",
+      "nothing_playing": "Nothing playing",
+      "choose_player": "Choose a Jellyfin player in the inspector",
+      "choose_sessions": "Choose Jellyfin players in the inspector",
+      "watching": "1 playing | {n} playing",
+      "nobody": "Nothing playing",
+      "episode": "S{season} E{episode}",
+      "back_n": "-{n} s",
+      "forward_n": "+{n} s",
+      "library": "Library",
+      "library_root": "Jellyfin",
+      "play_all": "Play all",
+      "play_sent": "Sent to the player",
+      "not_sent": "Not sent: may the screen perform actions?",
+      "empty": "Nothing here",
+      "browse_failed": "Couldn't read the library. Is the player still connected? Tap to try again.",
+      "first_n": "Showing {n}; there may be more",
+      "page": "{n} / {total}",
+      "name_fallback": "Jellyfin"
+     },
+     "app": {
+      "name": "Jellyfin",
+      "summary": "What plays on your Jellyfin clients, keys to control it, and your libraries to browse and play.",
+      "now_name": "Jellyfin now playing",
+      "now_example": "Severance · S2 E3, 12:34 of 48:10",
+      "jump": "Seek step",
+      "jump_hint": "How far the back and forward keys of the control card jump.",
+      "sessions_name": "Jellyfin sessions",
+      "sessions_example": "2 playing: Living room, Bedroom",
+      "session_1": "Player 1",
+      "session_2": "Player 2",
+      "session_3": "Player 3",
+      "session_4": "Player 4",
+      "session_5": "Player 5",
+      "session_6": "Player 6",
+      "session_7": "Player 7",
+      "session_8": "Player 8",
+      "session_hint": "A media player of the Jellyfin integration: one for every Jellyfin app or device that connected to the server.",
+      "names": "Names",
+      "names_hint": "Your own names for the players, in their order, separated by commas: Living room, Bedroom. Leave a place empty (Living room,,Kitchen) to keep that player's name.",
+      "active_only": "Only what plays",
+      "active_only_hint": "Show only the players that play or are paused.",
+      "control_name": "Jellyfin control",
+      "library_name": "Jellyfin library"
+     }
+    },
+    "pt": {
+     "_meta": {
+      "name": "Português"
+     },
+     "screen": {
+      "playing": "Tocando",
+      "paused": "Pausado",
+      "idle": "Parado",
+      "off": "Desligado",
+      "offline": "Offline",
+      "too_large": "Sem dados",
+      "loading": "Carregando…",
+      "waiting": "Aguardando o player",
+      "nothing_playing": "Nada tocando",
+      "choose_player": "Escolha um player do Jellyfin no inspetor",
+      "choose_sessions": "Escolha players do Jellyfin no inspetor",
+      "watching": "1 tocando | {n} tocando",
+      "nobody": "Nada tocando",
+      "episode": "T{season} E{episode}",
+      "back_n": "-{n} s",
+      "forward_n": "+{n} s",
+      "library": "Biblioteca",
+      "library_root": "Jellyfin",
+      "play_all": "Tocar tudo",
+      "play_sent": "Enviado ao player",
+      "not_sent": "Não enviado: a tela pode executar ações?",
+      "empty": "Nada aqui",
+      "browse_failed": "Não foi possível ler a biblioteca. O player ainda está conectado? Toque para tentar de novo.",
+      "first_n": "Mostrando {n}; pode haver mais",
+      "page": "{n} / {total}",
+      "name_fallback": "Jellyfin"
+     },
+     "app": {
+      "name": "Jellyfin",
+      "summary": "O que toca nos seus clientes Jellyfin, botões para controlar e suas bibliotecas para navegar e tocar.",
+      "now_name": "Jellyfin tocando agora",
+      "now_example": "Ruptura · T2 E3, 12:34 de 48:10",
+      "jump": "Pulo ao voltar e avançar",
+      "jump_hint": "Quanto os botões de voltar e avançar do card de controle pulam.",
+      "sessions_name": "Sessões do Jellyfin",
+      "sessions_example": "2 tocando: Sala, Quarto",
+      "session_1": "Player 1",
+      "session_2": "Player 2",
+      "session_3": "Player 3",
+      "session_4": "Player 4",
+      "session_5": "Player 5",
+      "session_6": "Player 6",
+      "session_7": "Player 7",
+      "session_8": "Player 8",
+      "session_hint": "Um media player da integração Jellyfin: um para cada app ou aparelho que se conectou ao servidor.",
+      "names": "Nomes",
+      "names_hint": "Seus próprios nomes para os players, na ordem, separados por vírgulas: Sala, Quarto. Deixe um lugar vazio (Sala,,Cozinha) para manter o nome do player.",
+      "active_only": "Só o que toca",
+      "active_only_hint": "Mostra só os players que estão tocando ou pausados.",
+      "control_name": "Controle do Jellyfin",
+      "library_name": "Biblioteca do Jellyfin"
+     }
+    }
+   },
+   "readme": {
+    "en": "# Jellyfin\n\n> **Control depends on the device.** The screen always shows what plays, but play, pause, seek, volume and the library\n> work only when the Jellyfin app on that device takes remote commands. Many don't, such as the Chromecast, and some TV\n> and phone apps. See \"Not every Jellyfin app takes commands\" below for a quick check.\n\nWhat plays on your Jellyfin clients, with its cover, the series and episode or the artist, and how far along; a card\nwith keys to play and pause, seek, stop, change the volume and mute; and your libraries to browse and play from the\nscreen.\n\nIt works with Home Assistant's own **Jellyfin** integration. The screen never talks to the Jellyfin server: Home\nAssistant does, and the screen reads and controls the integration's media players.\n\n## Set up\n\n### 1. First, in Home Assistant\n\n1. Add the **Jellyfin** integration (Settings > Devices & services > Add integration > Jellyfin) with your server's\n   address and a Jellyfin user.\n2. Open a Jellyfin app on a TV, a phone or a browser. The integration makes a **media player** for every app or device\n   that connects to the server (`media_player.living_room_tv`). It stays in Home Assistant when the app closes, as\n   unavailable until the app connects again.\n3. Let the screen perform actions: Settings > Devices & services > ESPHome > your screen > **Configure** > tick\n   **Allow the device to perform Home Assistant actions**. Without it the keys do nothing.\n\n### 2. The tiles\n\nAdd the plugin to a screen in Tessera (the screen builds once). In Layout, from the library's Plugins group:\n\n1. **Jellyfin now playing**: choose one Jellyfin media player as its entity. It shows the cover (on screens with\n   pictures), the title, the series and episode or the artist and album, and a bar with the time played and left.\n   With nothing playing it says so.\n2. **Jellyfin sessions**: choose up to eight Jellyfin media players, and in **Names** your own names for them in their\n   order (`Living room, Bedroom`; an empty place keeps the player's name). The ones that play come first. Turn on\n   **Only what plays** to leave out the idle and offline ones.\n\nChanging an entity in the inspector needs no build.\n\n### 3. The control card\n\n1. Tap a now playing tile, or a row of the sessions tile. The card opens with the cover, what plays and how far along.\n2. **Keys**: back and forward by the **Seek step** of the tile (30 s unless you change it), play and pause, stop, the\n   volume down and up, and mute. A key shows only when the Jellyfin app says it can do it: not every app reports a\n   volume, for example.\n3. **Library** opens the library card for that player.\n4. **If a key does nothing**, the device's Jellyfin app is not taking remote commands: this depends on the device and\n   its app, not on the screen. The same key in Home Assistant's own media card does nothing either.\n\n### 4. The library\n\n1. The card starts with your libraries (Movies, Shows, Music). Tap one to open it, then a series, a season or an album.\n2. Tap a film, an episode or a song to play it on the player the card was opened for. **Play all** plays the folder\n   that is open (a season, an album).\n3. **Back** at the top left goes up a level; the arrows at the bottom turn the page.\n\n## Good to know\n\n- **A large library shows its first items only.** An answer of Home Assistant reaches the screen within about 3 KB, so a\n  folder shows only its first items (about ten, in the server's order), and the card says there may be more. Open a smaller folder (a series, a\n  season, a collection) to reach the rest.\n- **No covers in the library.** Its pictures are on your Jellyfin server, on the home network, where Tessera fetches\n  nothing. The now playing tile and the control card do show the cover: Home Assistant hands it over.\n- **No next and previous track.** The integration's media player has no such action; use seek, or the library.\n- **Several players with one name.** Jellyfin makes a media player for every session, so a TV can show up several\n  times (three \"Samsung Smart TV\", `media_player.samsung_smart_tv_2`, ...). Choose the one whose state changes while it\n  plays, and choose again if the app makes a new one.\n- **Not every Jellyfin app takes commands.** An app that cannot be controlled remotely shows what it plays, but has no\n  keys and no library. The Chromecast receiver reports no commands at all, and in one home a Samsung (Tizen) and an\n  Android app accepted nothing from Home Assistant while a browser did. A quick check: Jellyfin's dashboard shows\n  control buttons on a session only when the server can control it; without them, Home Assistant and the screen\n  cannot either.\n- **The cover as a screensaver.** Tessera's own screensaver step **Music playing** (the screen's Settings >\n  Screensaver) shows the cover of a Jellyfin player while it plays; no plugin needed.\n- The library is read through the player's own media player, so it needs that player connected to the server.\n\n## Tested\n\nOn a real Guition 4\" screen, with Jellyfin's Samsung (Tizen), Android, Android TV, Chromecast and web apps, and on\nTessera's bench with no warning (CYD, Guition 4\", Waveshare 4.3\" portrait, JC8012P4A1).\n",
+    "pt": "# Jellyfin\n\n> **O controle depende do aparelho.** A tela sempre mostra o que toca, mas tocar, pausar, avançar, o volume e a\n> biblioteca só funcionam quando o app do Jellyfin naquele aparelho aceita comandos remotos. Muitos não aceitam, como\n> o Chromecast e alguns apps de TV e de celular. Veja \"Nem todo app do Jellyfin aceita comandos\" abaixo para um teste\n> rápido.\n\nO que toca nos seus clientes Jellyfin, com a capa, a série e o episódio ou o artista, e quanto já passou; um card com\nbotões para tocar e pausar, avançar e voltar, parar, mudar o volume e silenciar; e suas bibliotecas para navegar e\ntocar a partir da tela.\n\nFunciona com a integração **Jellyfin** do próprio Home Assistant. A tela nunca fala com o servidor Jellyfin: quem fala\né o Home Assistant, e a tela lê e controla os media players da integração.\n\n## Configuração\n\n### 1. Primeiro, no Home Assistant\n\n1. Adicione a integração **Jellyfin** (Configurações > Dispositivos e serviços > Adicionar integração > Jellyfin) com\n   o endereço do seu servidor e um usuário do Jellyfin.\n2. Abra um app do Jellyfin numa TV, num celular ou num navegador. A integração cria um **media player** para cada app\n   ou aparelho que se conecta ao servidor (`media_player.living_room_tv`). Ele continua no Home Assistant quando o app\n   fecha, como indisponível, até o app se conectar de novo.\n3. Deixe a tela executar ações: Configurações > Dispositivos e serviços > ESPHome > sua tela > **Configurar** > marque\n   **Permitir que o dispositivo execute ações do Home Assistant** (*Allow the device to perform Home Assistant\n   actions*). Sem isso os botões não fazem nada.\n\n### 2. Os tiles\n\nAdicione o plugin a uma tela no Tessera (a tela compila uma vez). Em Layout, no grupo Plugins da biblioteca:\n\n1. **Jellyfin tocando agora**: escolha um media player do Jellyfin como entidade. Mostra a capa (nas telas com\n   imagens), o título, a série e o episódio ou o artista e o álbum, e uma barra com o tempo tocado e o que falta. Sem\n   nada tocando, ele avisa.\n2. **Sessões do Jellyfin**: escolha até oito media players do Jellyfin e, em **Nomes**, seus próprios nomes para eles\n   na ordem (`Sala, Quarto`; um lugar vazio mantém o nome do player). Os que estão tocando vêm primeiro. Ligue **Só o\n   que toca** para esconder os parados e offline.\n\nTrocar uma entidade no inspetor não precisa de compilação.\n\n### 3. O card de controle\n\n1. Toque num tile tocando agora, ou numa linha do tile de sessões. O card abre com a capa, o que toca e quanto já\n   passou.\n2. **Botões**: voltar e avançar pelo **Pulo ao voltar e avançar** do tile (30 s se você não mudar), tocar e pausar, parar,\n   volume para baixo e para cima, e silenciar. Um botão só aparece quando o app do Jellyfin diz que consegue fazer\n   aquilo: nem todo app informa um volume, por exemplo.\n3. **Biblioteca** abre o card da biblioteca para aquele player.\n4. **Se um botão não faz nada**, o app do Jellyfin do aparelho não está aceitando comandos remotos: isso depende do\n   aparelho e do app, não da tela. O mesmo botão no card de mídia do próprio Home Assistant também não funciona.\n\n### 4. A biblioteca\n\n1. O card começa pelas suas bibliotecas (Filmes, Séries, Música). Toque numa para abrir, depois numa série, numa\n   temporada ou num álbum.\n2. Toque num filme, num episódio ou numa música para tocar no player para o qual o card foi aberto. **Tocar tudo**\n   toca a pasta aberta (uma temporada, um álbum).\n3. **Voltar**, no canto de cima à esquerda, sobe um nível; as setas embaixo trocam a página.\n\n## Bom saber\n\n- **Uma biblioteca grande mostra só os primeiros itens.** A resposta do Home Assistant chega à tela com uns 3 KB, então\n  uma pasta mostra só os primeiros itens (uns dez, na ordem do servidor), e o card avisa que pode haver mais. Abra uma pasta menor (uma série, uma\n  temporada, uma coleção) para chegar ao resto.\n- **Sem capas na biblioteca.** As imagens estão no seu servidor Jellyfin, na rede de casa, de onde o Tessera não busca\n  nada. O tile tocando agora e o card de controle mostram a capa: o Home Assistant a entrega.\n- **Sem próxima e anterior.** O media player da integração não tem essa ação; use o avanço ou a biblioteca.\n- **Vários players com o mesmo nome.** O Jellyfin cria um media player para cada sessão, então uma TV pode aparecer\n  várias vezes (três \"Samsung Smart TV\", `media_player.samsung_smart_tv_2`...). Escolha aquele cujo estado muda\n  enquanto toca, e escolha de novo se o app criar outro.\n- **Nem todo app do Jellyfin aceita comandos.** Um app que não aceita controle remoto mostra o que toca, mas não tem\n  botões nem biblioteca. O receptor do Chromecast não informa nenhum comando, e numa casa um app da Samsung (Tizen) e\n  um de Android não aceitaram nada do Home Assistant, enquanto um navegador aceitou. Teste rápido: o painel do\n  Jellyfin só mostra botões de controle numa sessão quando o servidor consegue controlá-la; sem eles, nem o Home\n  Assistant nem a tela conseguem.\n- **A capa como descanso de tela.** O passo **Música a tocar** do próprio descanso de tela do Tessera (Configurações\n  da tela > Descanso de tela) mostra a capa de um player do Jellyfin enquanto ele toca, sem plugin extra.\n- A biblioteca é lida pelo media player do próprio player, então ele precisa estar conectado ao servidor.\n\n## Testado\n\nNuma tela Guition de 4\" de verdade, com os apps do Jellyfin para Samsung (Tizen), Android, Android TV, Chromecast e\nweb, e na bancada do Tessera sem nenhum aviso (CYD, Guition 4\", Waveshare 4.3\" em pé, JC8012P4A1).\n"
+   },
+   "changelog": {
+    "en": "# Changelog\n\n## 0.1.3 - 2026-11-19\n- The control card says \"Waiting for the player\" once, in its title, while the player's data is on its way.\n\n## 0.1.2 - 2026-11-19\n- A Jellyfin app that cannot be controlled remotely shows no keys and no Library any more, instead of keys that did\n  nothing.\n- The sessions tile keeps a player whose data did not fit the screen's message, as \"No data\", instead of leaving it out.\n- Long names and titles are cut on a whole letter; the screen redraws less every second.\n- The library on a small screen (the CYD) no longer draws a row under the page keys. It stops waiting after 20\n  seconds without an answer, and a tap on \"Couldn't read the library\" tries again. Its note no longer claims a folder\n  was cut: it says there may be more.\n- The control card says \"Loading…\" while the player's data is on its way, instead of \"Nothing playing\" and \"Offline\".\n- The README says how to find the right player when a TV shows up several times, which Jellyfin apps take commands,\n  and how to show the cover as a screensaver.\n\n## 0.1.1 - 2026-11-10\n- The library now opens a library, a series or an album: it asks Home Assistant with the folder's type, which\n  Home Assistant needs beside its id.\n\n## 0.1.0 - 2026-11-10\n- First version: a now playing tile of one Jellyfin client (cover, title, series and episode or artist, progress), a\n  sessions tile of up to eight clients, a control card (play and pause, seek, stop, volume, mute) and a library card\n  that browses your libraries and plays what you tap. Needs Home Assistant's Jellyfin integration (see the README).\n"
+   },
+   "image": "store.png"
+  },
+  {
    "id": "photo_slideshow",
    "repo": "https://github.com/djsmile-t/tessera-photo-slideshow",
    "repo_id": 1422314338,
@@ -9134,6 +10267,868 @@
    "image": "store.png"
   },
   {
+   "id": "select_buttons",
+   "repo": "https://github.com/woldhek/tessera-plugin-select-buttons",
+   "repo_id": 1452752433,
+   "path": ".",
+   "label": "community",
+   "status": "ok",
+   "release": {
+    "version": "0.1.1",
+    "sha": "a286189d534d02df7eccb97049b339bb628bc9b2",
+    "date": "2026-11-14",
+    "tag": "v0.1.1"
+   },
+   "manifest": {
+    "id": "select_buttons",
+    "version": "0.1.1",
+    "api": "0.12",
+    "icon": "gesture-tap-button",
+    "maintainer": "woldhek",
+    "license": "MIT",
+    "stage": "beta",
+    "topics": [
+     "home"
+    ],
+    "requires": {
+     "esphome": "2026.6.2"
+    },
+    "boards": "any",
+    "flash_kb": 8,
+    "tiles": [
+     {
+      "id": "buttons",
+      "name": "tile_name",
+      "icon": "gesture-tap-button",
+      "sizes": {
+       "min": "1x1",
+       "max": "9x9"
+      },
+      "memory": 1900,
+      "domains": [
+       "input_select",
+       "select"
+      ],
+      "attributes": [
+       "options"
+      ],
+      "example": "tile_example",
+      "preview": {
+       "title": "{name}",
+       "value": "{state}"
+      },
+      "options": [
+       {
+        "id": "show_name",
+        "kind": "toggle",
+        "label": "show_name",
+        "hint": "show_name_hint",
+        "default": true
+       },
+       {
+        "id": "show_labels",
+        "kind": "toggle",
+        "label": "show_labels",
+        "hint": "show_labels_hint",
+        "default": true
+       },
+       {
+        "id": "confirm",
+        "kind": "toggle",
+        "label": "confirm",
+        "hint": "confirm_hint",
+        "default": false
+       },
+       {
+        "id": "icon_1",
+        "kind": "choice",
+        "label": "icon_1",
+        "hint": "icon_hint",
+        "default": "none",
+        "choices": [
+         {
+          "value": "none",
+          "label": "icon_none"
+         },
+         {
+          "value": "gamepad-variant",
+          "label": "icon_gamepad_variant"
+         },
+         {
+          "value": "monitor",
+          "label": "icon_monitor"
+         },
+         {
+          "value": "laptop",
+          "label": "icon_laptop"
+         },
+         {
+          "value": "desk",
+          "label": "icon_desk"
+         },
+         {
+          "value": "briefcase",
+          "label": "icon_briefcase"
+         },
+         {
+          "value": "home",
+          "label": "icon_home"
+         },
+         {
+          "value": "television",
+          "label": "icon_television"
+         },
+         {
+          "value": "projector",
+          "label": "icon_projector"
+         },
+         {
+          "value": "cast",
+          "label": "icon_cast"
+         },
+         {
+          "value": "audio-video",
+          "label": "icon_audio_video"
+         },
+         {
+          "value": "remote-tv",
+          "label": "icon_remote_tv"
+         },
+         {
+          "value": "speaker",
+          "label": "icon_speaker"
+         },
+         {
+          "value": "headphones",
+          "label": "icon_headphones"
+         },
+         {
+          "value": "microphone",
+          "label": "icon_microphone"
+         },
+         {
+          "value": "music",
+          "label": "icon_music"
+         },
+         {
+          "value": "radio",
+          "label": "icon_radio"
+         },
+         {
+          "value": "record-player",
+          "label": "icon_record_player"
+         },
+         {
+          "value": "movie-open",
+          "label": "icon_movie_open"
+         },
+         {
+          "value": "account",
+          "label": "icon_account"
+         },
+         {
+          "value": "account-group",
+          "label": "icon_account_group"
+         },
+         {
+          "value": "router-wireless",
+          "label": "icon_router_wireless"
+         },
+         {
+          "value": "power",
+          "label": "icon_power"
+         },
+         {
+          "value": "play",
+          "label": "icon_play"
+         },
+         {
+          "value": "cog",
+          "label": "icon_cog"
+         }
+        ]
+       },
+       {
+        "id": "icon_2",
+        "kind": "choice",
+        "label": "icon_2",
+        "hint": "icon_hint",
+        "default": "none",
+        "choices": [
+         {
+          "value": "none",
+          "label": "icon_none"
+         },
+         {
+          "value": "gamepad-variant",
+          "label": "icon_gamepad_variant"
+         },
+         {
+          "value": "monitor",
+          "label": "icon_monitor"
+         },
+         {
+          "value": "laptop",
+          "label": "icon_laptop"
+         },
+         {
+          "value": "desk",
+          "label": "icon_desk"
+         },
+         {
+          "value": "briefcase",
+          "label": "icon_briefcase"
+         },
+         {
+          "value": "home",
+          "label": "icon_home"
+         },
+         {
+          "value": "television",
+          "label": "icon_television"
+         },
+         {
+          "value": "projector",
+          "label": "icon_projector"
+         },
+         {
+          "value": "cast",
+          "label": "icon_cast"
+         },
+         {
+          "value": "audio-video",
+          "label": "icon_audio_video"
+         },
+         {
+          "value": "remote-tv",
+          "label": "icon_remote_tv"
+         },
+         {
+          "value": "speaker",
+          "label": "icon_speaker"
+         },
+         {
+          "value": "headphones",
+          "label": "icon_headphones"
+         },
+         {
+          "value": "microphone",
+          "label": "icon_microphone"
+         },
+         {
+          "value": "music",
+          "label": "icon_music"
+         },
+         {
+          "value": "radio",
+          "label": "icon_radio"
+         },
+         {
+          "value": "record-player",
+          "label": "icon_record_player"
+         },
+         {
+          "value": "movie-open",
+          "label": "icon_movie_open"
+         },
+         {
+          "value": "account",
+          "label": "icon_account"
+         },
+         {
+          "value": "account-group",
+          "label": "icon_account_group"
+         },
+         {
+          "value": "router-wireless",
+          "label": "icon_router_wireless"
+         },
+         {
+          "value": "power",
+          "label": "icon_power"
+         },
+         {
+          "value": "play",
+          "label": "icon_play"
+         },
+         {
+          "value": "cog",
+          "label": "icon_cog"
+         }
+        ]
+       },
+       {
+        "id": "icon_3",
+        "kind": "choice",
+        "label": "icon_3",
+        "hint": "icon_hint",
+        "default": "none",
+        "choices": [
+         {
+          "value": "none",
+          "label": "icon_none"
+         },
+         {
+          "value": "gamepad-variant",
+          "label": "icon_gamepad_variant"
+         },
+         {
+          "value": "monitor",
+          "label": "icon_monitor"
+         },
+         {
+          "value": "laptop",
+          "label": "icon_laptop"
+         },
+         {
+          "value": "desk",
+          "label": "icon_desk"
+         },
+         {
+          "value": "briefcase",
+          "label": "icon_briefcase"
+         },
+         {
+          "value": "home",
+          "label": "icon_home"
+         },
+         {
+          "value": "television",
+          "label": "icon_television"
+         },
+         {
+          "value": "projector",
+          "label": "icon_projector"
+         },
+         {
+          "value": "cast",
+          "label": "icon_cast"
+         },
+         {
+          "value": "audio-video",
+          "label": "icon_audio_video"
+         },
+         {
+          "value": "remote-tv",
+          "label": "icon_remote_tv"
+         },
+         {
+          "value": "speaker",
+          "label": "icon_speaker"
+         },
+         {
+          "value": "headphones",
+          "label": "icon_headphones"
+         },
+         {
+          "value": "microphone",
+          "label": "icon_microphone"
+         },
+         {
+          "value": "music",
+          "label": "icon_music"
+         },
+         {
+          "value": "radio",
+          "label": "icon_radio"
+         },
+         {
+          "value": "record-player",
+          "label": "icon_record_player"
+         },
+         {
+          "value": "movie-open",
+          "label": "icon_movie_open"
+         },
+         {
+          "value": "account",
+          "label": "icon_account"
+         },
+         {
+          "value": "account-group",
+          "label": "icon_account_group"
+         },
+         {
+          "value": "router-wireless",
+          "label": "icon_router_wireless"
+         },
+         {
+          "value": "power",
+          "label": "icon_power"
+         },
+         {
+          "value": "play",
+          "label": "icon_play"
+         },
+         {
+          "value": "cog",
+          "label": "icon_cog"
+         }
+        ]
+       },
+       {
+        "id": "icon_4",
+        "kind": "choice",
+        "label": "icon_4",
+        "hint": "icon_hint",
+        "default": "none",
+        "choices": [
+         {
+          "value": "none",
+          "label": "icon_none"
+         },
+         {
+          "value": "gamepad-variant",
+          "label": "icon_gamepad_variant"
+         },
+         {
+          "value": "monitor",
+          "label": "icon_monitor"
+         },
+         {
+          "value": "laptop",
+          "label": "icon_laptop"
+         },
+         {
+          "value": "desk",
+          "label": "icon_desk"
+         },
+         {
+          "value": "briefcase",
+          "label": "icon_briefcase"
+         },
+         {
+          "value": "home",
+          "label": "icon_home"
+         },
+         {
+          "value": "television",
+          "label": "icon_television"
+         },
+         {
+          "value": "projector",
+          "label": "icon_projector"
+         },
+         {
+          "value": "cast",
+          "label": "icon_cast"
+         },
+         {
+          "value": "audio-video",
+          "label": "icon_audio_video"
+         },
+         {
+          "value": "remote-tv",
+          "label": "icon_remote_tv"
+         },
+         {
+          "value": "speaker",
+          "label": "icon_speaker"
+         },
+         {
+          "value": "headphones",
+          "label": "icon_headphones"
+         },
+         {
+          "value": "microphone",
+          "label": "icon_microphone"
+         },
+         {
+          "value": "music",
+          "label": "icon_music"
+         },
+         {
+          "value": "radio",
+          "label": "icon_radio"
+         },
+         {
+          "value": "record-player",
+          "label": "icon_record_player"
+         },
+         {
+          "value": "movie-open",
+          "label": "icon_movie_open"
+         },
+         {
+          "value": "account",
+          "label": "icon_account"
+         },
+         {
+          "value": "account-group",
+          "label": "icon_account_group"
+         },
+         {
+          "value": "router-wireless",
+          "label": "icon_router_wireless"
+         },
+         {
+          "value": "power",
+          "label": "icon_power"
+         },
+         {
+          "value": "play",
+          "label": "icon_play"
+         },
+         {
+          "value": "cog",
+          "label": "icon_cog"
+         }
+        ]
+       },
+       {
+        "id": "icon_5",
+        "kind": "choice",
+        "label": "icon_5",
+        "hint": "icon_hint",
+        "default": "none",
+        "choices": [
+         {
+          "value": "none",
+          "label": "icon_none"
+         },
+         {
+          "value": "gamepad-variant",
+          "label": "icon_gamepad_variant"
+         },
+         {
+          "value": "monitor",
+          "label": "icon_monitor"
+         },
+         {
+          "value": "laptop",
+          "label": "icon_laptop"
+         },
+         {
+          "value": "desk",
+          "label": "icon_desk"
+         },
+         {
+          "value": "briefcase",
+          "label": "icon_briefcase"
+         },
+         {
+          "value": "home",
+          "label": "icon_home"
+         },
+         {
+          "value": "television",
+          "label": "icon_television"
+         },
+         {
+          "value": "projector",
+          "label": "icon_projector"
+         },
+         {
+          "value": "cast",
+          "label": "icon_cast"
+         },
+         {
+          "value": "audio-video",
+          "label": "icon_audio_video"
+         },
+         {
+          "value": "remote-tv",
+          "label": "icon_remote_tv"
+         },
+         {
+          "value": "speaker",
+          "label": "icon_speaker"
+         },
+         {
+          "value": "headphones",
+          "label": "icon_headphones"
+         },
+         {
+          "value": "microphone",
+          "label": "icon_microphone"
+         },
+         {
+          "value": "music",
+          "label": "icon_music"
+         },
+         {
+          "value": "radio",
+          "label": "icon_radio"
+         },
+         {
+          "value": "record-player",
+          "label": "icon_record_player"
+         },
+         {
+          "value": "movie-open",
+          "label": "icon_movie_open"
+         },
+         {
+          "value": "account",
+          "label": "icon_account"
+         },
+         {
+          "value": "account-group",
+          "label": "icon_account_group"
+         },
+         {
+          "value": "router-wireless",
+          "label": "icon_router_wireless"
+         },
+         {
+          "value": "power",
+          "label": "icon_power"
+         },
+         {
+          "value": "play",
+          "label": "icon_play"
+         },
+         {
+          "value": "cog",
+          "label": "icon_cog"
+         }
+        ]
+       },
+       {
+        "id": "icon_6",
+        "kind": "choice",
+        "label": "icon_6",
+        "hint": "icon_hint",
+        "default": "none",
+        "choices": [
+         {
+          "value": "none",
+          "label": "icon_none"
+         },
+         {
+          "value": "gamepad-variant",
+          "label": "icon_gamepad_variant"
+         },
+         {
+          "value": "monitor",
+          "label": "icon_monitor"
+         },
+         {
+          "value": "laptop",
+          "label": "icon_laptop"
+         },
+         {
+          "value": "desk",
+          "label": "icon_desk"
+         },
+         {
+          "value": "briefcase",
+          "label": "icon_briefcase"
+         },
+         {
+          "value": "home",
+          "label": "icon_home"
+         },
+         {
+          "value": "television",
+          "label": "icon_television"
+         },
+         {
+          "value": "projector",
+          "label": "icon_projector"
+         },
+         {
+          "value": "cast",
+          "label": "icon_cast"
+         },
+         {
+          "value": "audio-video",
+          "label": "icon_audio_video"
+         },
+         {
+          "value": "remote-tv",
+          "label": "icon_remote_tv"
+         },
+         {
+          "value": "speaker",
+          "label": "icon_speaker"
+         },
+         {
+          "value": "headphones",
+          "label": "icon_headphones"
+         },
+         {
+          "value": "microphone",
+          "label": "icon_microphone"
+         },
+         {
+          "value": "music",
+          "label": "icon_music"
+         },
+         {
+          "value": "radio",
+          "label": "icon_radio"
+         },
+         {
+          "value": "record-player",
+          "label": "icon_record_player"
+         },
+         {
+          "value": "movie-open",
+          "label": "icon_movie_open"
+         },
+         {
+          "value": "account",
+          "label": "icon_account"
+         },
+         {
+          "value": "account-group",
+          "label": "icon_account_group"
+         },
+         {
+          "value": "router-wireless",
+          "label": "icon_router_wireless"
+         },
+         {
+          "value": "power",
+          "label": "icon_power"
+         },
+         {
+          "value": "play",
+          "label": "icon_play"
+         },
+         {
+          "value": "cog",
+          "label": "icon_cog"
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "permissions": {
+     "read_entities": [
+      "input_select",
+      "select"
+     ],
+     "home_assistant_actions": [
+      "input_select.select_option",
+      "select.select_option"
+     ]
+    }
+   },
+   "translations": {
+    "en": {
+     "_meta": {
+      "name": "English"
+     },
+     "screen": {
+      "choose_entity": "Choose an input select",
+      "unavailable": "Unavailable",
+      "no_options": "No options",
+      "tap_again": "Tap again"
+     },
+     "app": {
+      "name": "Select buttons",
+      "summary": "A row of buttons for an input select: tap one to choose it, the current choice lights up.",
+      "tile_name": "Select buttons",
+      "tile_example": "Console · Personal PC · Office PC",
+      "show_name": "Show the name",
+      "show_name_hint": "The tile's name (or the entity's) above the buttons, when there is room.",
+      "show_labels": "Show the option names",
+      "show_labels_hint": "Off: only the icons, for buttons that each have one.",
+      "confirm": "Tap twice to switch",
+      "confirm_hint": "The first tap asks \"Tap again\"; only the second tap switches. Against switching by accident.",
+      "icon_hint": "An icon on this button, in the order of the entity's options.",
+      "icon_1": "Icon of option 1",
+      "icon_2": "Icon of option 2",
+      "icon_3": "Icon of option 3",
+      "icon_4": "Icon of option 4",
+      "icon_5": "Icon of option 5",
+      "icon_6": "Icon of option 6",
+      "icon_none": "No icon",
+      "icon_gamepad_variant": "Game controller",
+      "icon_monitor": "Monitor",
+      "icon_laptop": "Laptop",
+      "icon_desk": "Desk",
+      "icon_briefcase": "Briefcase",
+      "icon_home": "Home",
+      "icon_television": "Television",
+      "icon_projector": "Projector",
+      "icon_cast": "Cast",
+      "icon_audio_video": "Audio and video",
+      "icon_remote_tv": "TV remote",
+      "icon_speaker": "Speaker",
+      "icon_headphones": "Headphones",
+      "icon_microphone": "Microphone",
+      "icon_music": "Music",
+      "icon_radio": "Radio",
+      "icon_record_player": "Record player",
+      "icon_movie_open": "Film",
+      "icon_account": "Person",
+      "icon_account_group": "People",
+      "icon_router_wireless": "Router",
+      "icon_power": "Power",
+      "icon_play": "Play",
+      "icon_cog": "Settings"
+     }
+    },
+    "nl": {
+     "_meta": {
+      "name": "Nederlands"
+     },
+     "screen": {
+      "choose_entity": "Kies een input select",
+      "unavailable": "Niet beschikbaar",
+      "no_options": "Geen opties",
+      "tap_again": "Tik nog eens"
+     },
+     "app": {
+      "name": "Keuzeknoppen",
+      "summary": "Een rij knoppen voor een input select: tik er een om hem te kiezen, de huidige keuze licht op.",
+      "tile_name": "Keuzeknoppen",
+      "tile_example": "Console · Personal PC · Office PC",
+      "show_name": "Naam tonen",
+      "show_name_hint": "De naam van de tegel (of van de entity) boven de knoppen, als er ruimte is.",
+      "show_labels": "Namen van de opties tonen",
+      "show_labels_hint": "Uit: alleen de iconen, voor knoppen die er elk een hebben.",
+      "confirm": "Twee keer tikken om te wisselen",
+      "confirm_hint": "De eerste tik vraagt \"Tik nog eens\"; pas de tweede tik wisselt. Tegen per ongeluk omschakelen.",
+      "icon_hint": "Een icoon op deze knop, in de volgorde van de opties van de entity.",
+      "icon_1": "Icoon van optie 1",
+      "icon_2": "Icoon van optie 2",
+      "icon_3": "Icoon van optie 3",
+      "icon_4": "Icoon van optie 4",
+      "icon_5": "Icoon van optie 5",
+      "icon_6": "Icoon van optie 6",
+      "icon_none": "Geen icoon",
+      "icon_gamepad_variant": "Gamecontroller",
+      "icon_monitor": "Monitor",
+      "icon_laptop": "Laptop",
+      "icon_desk": "Bureau",
+      "icon_briefcase": "Werktas",
+      "icon_home": "Huis",
+      "icon_television": "Televisie",
+      "icon_projector": "Projector",
+      "icon_cast": "Casten",
+      "icon_audio_video": "Audio en video",
+      "icon_remote_tv": "Afstandsbediening",
+      "icon_speaker": "Speaker",
+      "icon_headphones": "Koptelefoon",
+      "icon_microphone": "Microfoon",
+      "icon_music": "Muziek",
+      "icon_radio": "Radio",
+      "icon_record_player": "Platenspeler",
+      "icon_movie_open": "Film",
+      "icon_account": "Persoon",
+      "icon_account_group": "Mensen",
+      "icon_router_wireless": "Router",
+      "icon_power": "Aan/uit",
+      "icon_play": "Afspelen",
+      "icon_cog": "Instellingen"
+     }
+    }
+   },
+   "readme": {
+    "en": "# Select buttons\n\nA row of buttons for an `input_select` or a `select` in Home Assistant: one button for each option, the current option\nlit. Tap a button to choose that option. Made for switching an HDMI input between a few sources, but it works for any\nchoice of a handful of options: a scene, a mode, a speaker.\n\n[Nederlandse versie](README.nl.md)\n\n- Every option of the entity gets a button, up to six. A wide tile puts them in a row, a tall one stacks them, a square\n  one makes a grid.\n- The current option is the lit button. When the option changes elsewhere (an automation, the Home Assistant app, a\n  remote), the screen follows.\n- After a tap the button gets a ring until Home Assistant has the new option; then it lights up.\n- Give each button an icon if you like; with **Show the option names** off, only the icons show.\n- Turn on **Tap twice to switch** and the first tap asks \"Tap again\": against switching away by accident.\n\n## What you need\n\n- Tessera 0.4.91 or later.\n- An `input_select` helper or a `select` entity in Home Assistant with the options you want, such as\n  `Console`, `Personal PC` and `Office PC`.\n\n## Set up\n\n1. Add the plugin to a screen in the Tessera app.\n2. In Layout, place the **Select buttons** tile from the plugin library, in the size you like (three across is a\n   three-way switch).\n3. In the inspector, choose the `input_select` or `select` as the tile's entity.\n4. Optionally, choose an icon for each option (in the order Home Assistant lists them), turn off **Show the name** or\n   **Show the option names**, or turn on **Tap twice to switch**.\n5. Build and install the screen.\n\n## Good to know\n\n- The buttons send `input_select.select_option` or `select.select_option`; the screen must be allowed to perform\n  actions.\n- On a 1x1 tile three keys stand side by side and long names are cut short: give them icons, or use a wider tile.\n- An entity with more than six options shows the first six. Tessera's own tile for the entity has them all.\n- An option of more than 45 characters arrives cut short, so its button shows but cannot choose it.\n\n## Screens it was tried on\n\n- Guition 4-inch (ESP32-S3, 480 x 480), Tessera stable.\n\nNot tried yet on the CYD or the 10-inch screens. Tell me in an issue how it works on yours.\n",
+    "nl": "# Keuzeknoppen (Select buttons)\n\nEen rij knoppen voor een `input_select` of een `select` in Home Assistant: een knop per optie, de huidige optie licht\nop. Tik op een knop om die optie te kiezen. Gemaakt om een HDMI-ingang tussen een paar bronnen te wisselen, maar het\nwerkt voor elke keuze uit een handvol opties: een scène, een modus, een speaker.\n\n[English version](README.md)\n\n- Elke optie van de entity krijgt een knop, tot zes. Een brede tegel zet ze naast elkaar, een hoge stapelt ze, een\n  vierkante maakt er een raster van.\n- De huidige optie is de knop die oplicht. Verandert de optie ergens anders (een automatisering, de Home Assistant-app,\n  een afstandsbediening), dan volgt het scherm.\n- Na een tik krijgt de knop een rand tot Home Assistant de nieuwe optie heeft; dan licht hij op.\n- Geef elke knop desgewenst een icoon; met **Namen van de opties tonen** uit staan alleen de iconen er.\n- Zet **Twee keer tikken om te wisselen** aan en de eerste tik vraagt \"Tik nog eens\": tegen per ongeluk wegschakelen.\n\n## Wat je nodig hebt\n\n- Tessera 0.4.91 of nieuwer.\n- Een `input_select`-helper of een `select`-entity in Home Assistant met de opties die je wilt, zoals `Console`,\n  `Personal PC` en `Office PC`.\n\n## Instellen\n\n1. Voeg de plugin toe aan een scherm in de Tessera-app.\n2. Zet in Layout de tegel **Keuzeknoppen** uit de pluginbibliotheek neer, in de grootte die je wilt (drie breed is een\n   3-wegschakelaar).\n3. Kies in de inspector de `input_select` of `select` als entity van de tegel.\n4. Kies eventueel een icoon per optie (in de volgorde waarin Home Assistant ze noemt), zet **Naam tonen** of **Namen\n   van de opties tonen** uit, of zet **Twee keer tikken om te wisselen** aan.\n5. Bouw het scherm en installeer het.\n\n## Goed om te weten\n\n- De knoppen sturen `input_select.select_option` of `select.select_option`; het scherm moet acties mogen uitvoeren.\n- Op een 1x1-tegel staan drie knoppen naast elkaar en lange namen worden ingekort: geef ze iconen, of neem een\n  bredere tegel.\n- Een entity met meer dan zes opties toont de eerste zes. Tessera's eigen tegel voor de entity heeft ze allemaal.\n- Een optie van meer dan 45 tekens komt ingekort aan; de knop staat er wel, maar kan hem niet kiezen.\n\n## Op welke schermen geprobeerd\n\n- Guition 4-inch (ESP32-S3, 480 x 480), Tessera stable.\n\nNog niet geprobeerd op de CYD of de 10-inch-schermen. Laat in een issue weten hoe hij op de jouwe werkt.\n"
+   },
+   "changelog": {
+    "en": "# Changelog\n\n## 0.1.1\n- A new example in the README, the tile's description and the picture on the Plugins page. Nothing changes on the\n  screen.\n\n## 0.1.0\n- First version: a key for each option of an `input_select` or `select` (up to six), the current option lit.\n- The keys follow Home Assistant: an option chosen elsewhere lights up on the screen too.\n- Optional icons per key, the tile's name above the keys, and \"Tap twice to switch\" against switching by accident.\n"
+   },
+   "image": "store.png"
+  },
+  {
    "id": "status_tile",
    "repo": "https://github.com/hflocki/tessera-status",
    "repo_id": 1427953388,
@@ -10198,6 +12193,524 @@
    },
    "changelog": {
     "en": "# Changelog\n\n## 0.2.2\n- Give the translated old-data warning the full footer width, keeping it right-aligned below the departures.\n- Rebuild and install screen firmware to apply the fix; existing tile settings are unchanged.\n\n## 0.2.1\n- Replace the two line dropdowns with one removable selection of up to eight lines.\n- At least one line is required; removing all selections shows Choose lines and stops departure polling for that tile.\n- Filter each selected line before merging, sorting and limiting departures; responses share the same stop cache.\n- Upgrade: select lines again (18 for Blåsut, 163 and 816 for Dalens sjukhus), save the layout, and rebuild/install firmware. Reselect the stop too when upgrading from 0.1.x.\n\n## 0.2.0\n- Requires Tessera 0.4.89 and firmware 0.57.0 (plugin API 0.12).\n- Search for and select a stop in one control; the selected name stays visible.\n- Upgrade from 0.1.x: reselect the stop in existing tiles, then rebuild and install firmware. The old scalar stop value cannot be converted automatically by the plugin. The two line fields remain unchanged in 0.2.0; their replacement follows in 0.2.1.\n\n## 0.1.3\n- Keep departure times aligned with a separate source credit below compact rows.\n- Upgrade GitHub Actions to Node.js 24 versions.\n- Rebuild and install the screen firmware for the layout update.\n\n## 0.1.2\n- Rename the plugin to Public transport (SE) in the plugin picker.\n- Tessera 0.4.88 cannot clear a dynamic choice: create a new tile to return to all lines after selecting a filter.\n- Select both line filters from dropdowns populated by the selected stop.\n- Choices include lines in the next hour, deduplicated across directions. Existing saved line numbers are preserved; reselect them when changing stops.\n\n## 0.1.1\n- Compact data attribution shares the last departure row on wide tiles, freeing vertical space.\n- Wide tiles also show departure lists in a one-column grid (including Guition 1x3).\n- Rebuild and install the screen firmware to apply the layout change.\n\n## 0.1.0\n- First beta: Swedish departures from Trafiklab Timetables.\n- Independent stop, two line filters, transport mode and destination per tile.\n- Swedish and English texts, walking time, delays and timetable-only indication.\n- Built-in stop name search and selection, with daily lookup caching.\n- One-minute updates; approximately 89,280 departure calls per 31 days for two stops.\n"
+   },
+   "image": "store.png"
+  },
+  {
+   "id": "swiss_departures",
+   "repo": "https://github.com/synergyx26/tessera-swiss-departures",
+   "repo_id": 1466009991,
+   "path": ".",
+   "label": "community",
+   "status": "ok",
+   "release": {
+    "version": "1.0.0",
+    "sha": "d35b99a4916e2bb226b1385a427123b5587ce34c",
+    "date": "2026-11-21",
+    "tag": "v1.0.0"
+   },
+   "manifest": {
+    "id": "swiss_departures",
+    "version": "1.0.0",
+    "api": "0.28",
+    "icon": "train",
+    "maintainer": "synergyx26",
+    "license": "MIT",
+    "stage": "beta",
+    "topics": [
+     "travel"
+    ],
+    "requires": {
+     "esphome": "2026.6.2"
+    },
+    "boards": "any",
+    "flash_kb": 14,
+    "permissions": {
+     "network": [
+      "transport.opendata.ch"
+     ]
+    },
+    "attributes": [
+     "cloud"
+    ],
+    "privacy": "https://github.com/synergyx26/tessera-swiss-departures#privacy",
+    "tiles": [
+     {
+      "id": "next",
+      "name": "tile_name",
+      "icon": "train",
+      "sizes": {
+       "min": "1x1",
+       "max": "3x2",
+       "full": true
+      },
+      "memory": 1400,
+      "data": "departures",
+      "example": "tile_example",
+      "preview": {
+       "badge": "{line}",
+       "title": "{to}",
+       "countdown": "plan"
+      },
+      "options": [
+       {
+        "id": "stop",
+        "kind": "choice",
+        "options_from": "stops",
+        "search": true,
+        "label": "stop",
+        "hint": "stop_hint"
+       },
+       {
+        "id": "kind",
+        "kind": "choice",
+        "label": "kind",
+        "hint": "kind_hint",
+        "default": "all",
+        "choices": [
+         {
+          "value": "all",
+          "label": "kind_all"
+         },
+         {
+          "value": "train",
+          "label": "kind_train"
+         },
+         {
+          "value": "tram",
+          "label": "kind_tram"
+         },
+         {
+          "value": "bus",
+          "label": "kind_bus"
+         },
+         {
+          "value": "ship",
+          "label": "kind_ship"
+         },
+         {
+          "value": "cableway",
+          "label": "kind_cableway"
+         }
+        ]
+       },
+       {
+        "id": "line",
+        "kind": "choice",
+        "options_from": "lines",
+        "label": "line",
+        "hint": "line_hint"
+       },
+       {
+        "id": "towards",
+        "kind": "choice",
+        "options_from": "directions",
+        "label": "towards",
+        "hint": "towards_hint"
+       },
+       {
+        "id": "walk",
+        "kind": "number",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "min",
+        "default": 0,
+        "label": "walk",
+        "hint": "walk_hint"
+       },
+       {
+        "id": "late",
+        "kind": "toggle",
+        "default": true,
+        "label": "late",
+        "hint": "late_hint"
+       },
+       {
+        "id": "track",
+        "kind": "toggle",
+        "default": true,
+        "label": "track",
+        "hint": "track_hint"
+       },
+       {
+        "id": "look",
+        "kind": "choice",
+        "label": "look",
+        "hint": "look_hint",
+        "group": "group_colours",
+        "default": "tessera",
+        "choices": [
+         {
+          "value": "tessera",
+          "label": "look_tessera"
+         },
+         {
+          "value": "red",
+          "label": "look_red"
+         },
+         {
+          "value": "board",
+          "label": "look_board"
+         }
+        ]
+       },
+       {
+        "id": "kinds",
+        "kind": "toggle",
+        "default": false,
+        "label": "kinds",
+        "hint": "kinds_hint",
+        "group": "group_colours"
+       },
+       {
+        "id": "alarm",
+        "kind": "toggle",
+        "default": true,
+        "label": "alarm",
+        "hint": "alarm_hint",
+        "group": "group_colours"
+       }
+      ]
+     },
+     {
+      "id": "trip",
+      "name": "trip_name",
+      "icon": "train",
+      "sizes": {
+       "min": "1x1",
+       "max": "3x2",
+       "full": true
+      },
+      "memory": 1700,
+      "data": "connections",
+      "example": "trip_example",
+      "preview": {
+       "badge": "{cat} {line}",
+       "countdown": "plan"
+      },
+      "options": [
+       {
+        "id": "stop",
+        "kind": "choice",
+        "options_from": "stops",
+        "search": true,
+        "label": "trip_from",
+        "hint": "stop_hint"
+       },
+       {
+        "id": "dest",
+        "kind": "choice",
+        "options_from": "stops",
+        "search": true,
+        "label": "trip_to",
+        "hint": "trip_to_hint"
+       },
+       {
+        "id": "direct",
+        "kind": "toggle",
+        "default": false,
+        "label": "direct",
+        "hint": "direct_hint"
+       },
+       {
+        "id": "walk",
+        "kind": "number",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "min",
+        "default": 0,
+        "label": "walk",
+        "hint": "walk_hint"
+       },
+       {
+        "id": "late",
+        "kind": "toggle",
+        "default": true,
+        "label": "late",
+        "hint": "late_hint"
+       },
+       {
+        "id": "track",
+        "kind": "toggle",
+        "default": true,
+        "label": "track",
+        "hint": "track_hint"
+       },
+       {
+        "id": "look",
+        "kind": "choice",
+        "label": "look",
+        "hint": "look_hint",
+        "group": "group_colours",
+        "default": "tessera",
+        "choices": [
+         {
+          "value": "tessera",
+          "label": "look_tessera"
+         },
+         {
+          "value": "red",
+          "label": "look_red"
+         },
+         {
+          "value": "board",
+          "label": "look_board"
+         }
+        ]
+       },
+       {
+        "id": "kinds",
+        "kind": "toggle",
+        "default": false,
+        "label": "kinds",
+        "hint": "kinds_hint",
+        "group": "group_colours"
+       },
+       {
+        "id": "alarm",
+        "kind": "toggle",
+        "default": true,
+        "label": "alarm",
+        "hint": "alarm_hint",
+        "group": "group_colours"
+       }
+      ]
+     }
+    ],
+    "cards": [
+     {
+      "id": "list",
+      "name": "card_name"
+     }
+    ],
+    "fetch": [
+     {
+      "id": "stops",
+      "url": "https://transport.opendata.ch/v1/locations?query={search}&type=station",
+      "every": "1d",
+      "map": {
+       "items": "$.stations[*]",
+       "value": "id",
+       "label": "name"
+      }
+     },
+     {
+      "id": "departures",
+      "url": "https://transport.opendata.ch/v1/stationboard?id={stop}&limit=80&transportations[]={kind}&fields[]=stationboard/category&fields[]=stationboard/number&fields[]=stationboard/to&fields[]=stationboard/stop/departureTimestamp&fields[]=stationboard/stop/delay&fields[]=stationboard/stop/platform&fields[]=stationboard/stop/prognosis/platform",
+      "every": "60s",
+      "map": {
+       "items": "$.stationboard[*]",
+       "fields": {
+        "cat": "category",
+        "line": "number",
+        "to": "to",
+        "plan": {
+         "path": "stop.departureTimestamp",
+         "as": "epoch"
+        },
+        "delay": {
+         "path": "stop.delay",
+         "as": "number"
+        },
+        "track": "stop.platform",
+        "moved": "stop.prognosis.platform"
+       },
+       "where": {
+        "line": "{line}",
+        "to": "{towards}"
+       },
+       "sort": "plan",
+       "limit": 8
+      }
+     },
+     {
+      "id": "lines",
+      "url": "https://transport.opendata.ch/v1/stationboard?id={stop}&limit=80&transportations[]={kind}&fields[]=stationboard/category&fields[]=stationboard/number&fields[]=stationboard/to&fields[]=stationboard/stop/departureTimestamp&fields[]=stationboard/stop/delay&fields[]=stationboard/stop/platform&fields[]=stationboard/stop/prognosis/platform",
+      "every": "1h",
+      "map": {
+       "items": "$.stationboard[*]",
+       "value": "number",
+       "label": [
+        "category",
+        "number"
+       ]
+      }
+     },
+     {
+      "id": "directions",
+      "url": "https://transport.opendata.ch/v1/stationboard?id={stop}&limit=80&transportations[]={kind}&fields[]=stationboard/category&fields[]=stationboard/number&fields[]=stationboard/to&fields[]=stationboard/stop/departureTimestamp&fields[]=stationboard/stop/delay&fields[]=stationboard/stop/platform&fields[]=stationboard/stop/prognosis/platform",
+      "every": "1h",
+      "map": {
+       "items": "$.stationboard[*]",
+       "value": "to",
+       "label": "to"
+      }
+     },
+     {
+      "id": "connections",
+      "url": "https://transport.opendata.ch/v1/connections?from={stop}&to={dest}&limit=12&fields[]=connections/from/departureTimestamp&fields[]=connections/from/delay&fields[]=connections/from/platform&fields[]=connections/from/prognosis/platform&fields[]=connections/to/arrivalTimestamp&fields[]=connections/transfers&fields[]=connections/sections/journey/category&fields[]=connections/sections/journey/number&fields[]=connections/from/prognosis/capacity2nd",
+      "every": "60s",
+      "map": {
+       "items": "$.connections[*]",
+       "fields": {
+        "cat": "sections[0].journey.category",
+        "line": "sections[0].journey.number",
+        "plan": {
+         "path": "from.departureTimestamp",
+         "as": "epoch"
+        },
+        "delay": {
+         "path": "from.delay",
+         "as": "number"
+        },
+        "track": "from.platform",
+        "moved": "from.prognosis.platform",
+        "arrive": {
+         "path": "to.arrivalTimestamp",
+         "as": "epoch"
+        },
+        "changes": {
+         "path": "transfers",
+         "as": "number"
+        },
+        "load": {
+         "path": "from.prognosis.capacity2nd",
+         "as": "number"
+        },
+        "cat2": "sections[1].journey.category",
+        "line2": "sections[1].journey.number"
+       },
+       "sort": "plan",
+       "limit": 10
+      }
+     },
+     {
+      "id": "legs",
+      "asked": [
+       "from",
+       "to",
+       "date",
+       "time"
+      ],
+      "url": "https://transport.opendata.ch/v1/connections?from={from}&to={to}&date={date}&time={time}&limit=3&fields[]=connections/sections/journey/category&fields[]=connections/sections/journey/number&fields[]=connections/sections/journey/to&fields[]=connections/sections/departure&fields[]=connections/sections/arrival&fields[]=connections/sections/walk",
+      "every": "2m",
+      "map": {
+       "items": "$.connections[*].sections[*]",
+       "fields": {
+        "cat": "journey.category",
+        "line": "journey.number",
+        "dir": "journey.to",
+        "dep": {
+         "path": "departure.departureTimestamp",
+         "as": "epoch"
+        },
+        "from": "departure.station.name",
+        "ftrack": "departure.platform",
+        "moved": "departure.prognosis.platform",
+        "delay": {
+         "path": "departure.delay",
+         "as": "number"
+        },
+        "arr": {
+         "path": "arrival.arrivalTimestamp",
+         "as": "epoch"
+        },
+        "to": "arrival.station.name",
+        "ttrack": "arrival.platform",
+        "walk": {
+         "path": "walk.duration",
+         "as": "number"
+        }
+       }
+      }
+     }
+    ]
+   },
+   "translations": {
+    "en": {
+     "_meta": {
+      "name": "English"
+     },
+     "screen": {
+      "now": "now",
+      "minutes": "{n} min",
+      "then": "then {list}",
+      "none": "No departures",
+      "waiting": "Asking for times",
+      "choose_stop": "Choose a stop",
+      "failed": "No times right now",
+      "old": "Times may be old",
+      "late": "+{n}'",
+      "track": "Pl. {p}",
+      "leave_in": "Leave in {n} min",
+      "leave_now": "Leave now",
+      "arrives": "arr. {t}",
+      "changes": "1 change | {n} changes",
+      "choose_trip": "Choose both stops",
+      "hours": "{n} h {m} min",
+      "direct_word": "Direct",
+      "load_1": "Seats free",
+      "load_2": "Fairly busy",
+      "load_3": "Very busy",
+      "towards": "towards {to}",
+      "walk": "Walk {n} min",
+      "change_min": "Change, {n} min",
+      "asking_legs": "Asking for the route",
+      "no_legs": "No details right now"
+     },
+     "app": {
+      "name": "Swiss departures",
+      "summary": "The next train, tram, bus or boat from any Swiss stop, or every connection to where you go, live.",
+      "tile_name": "Next departure",
+      "tile_example": "S6 to Baden in 4 min",
+      "stop": "Stop",
+      "stop_hint": "Type a few letters of the station or stop, such as \"Zürich HB\" or \"Bern, Bahnhof\", and pick it.",
+      "kind": "Transport",
+      "kind_hint": "Only this kind of departure. All keeps every one.",
+      "kind_all": "All",
+      "kind_train": "Train",
+      "kind_tram": "Tram",
+      "kind_bus": "Bus",
+      "kind_ship": "Boat",
+      "kind_cableway": "Cable car",
+      "line": "Line",
+      "line_hint": "Empty shows every line that leaves here.",
+      "towards": "Direction",
+      "towards_hint": "Only departures to this destination. Empty shows both directions.",
+      "walk": "Walk to the stop",
+      "walk_hint": "Departures you can no longer make are skipped, and the tile says when to leave.",
+      "late": "Show delays",
+      "late_hint": "A departure that runs a minute or more late gets \"+2'\" behind where it goes.",
+      "track": "Show platform",
+      "track_hint": "The platform or stand, and the new one when it changed.",
+      "trip_name": "Connections",
+      "trip_example": "IC5 arr. 15:56 in 4 min",
+      "trip_from": "From",
+      "trip_to": "To",
+      "trip_to_hint": "Where you are going. Every train that takes you there shows, also one that runs on beyond it (the IC 5 to Rorschach for Zürich HB).",
+      "direct": "Direct only",
+      "direct_hint": "Leave out connections with a change.",
+      "card_name": "Timetable",
+      "group_colours": "Colours",
+      "look": "Look",
+      "look_hint": "Tessera's blue, red line badges as on Swiss station boards, or a dark station board.",
+      "look_tessera": "Tessera",
+      "look_red": "Swiss red",
+      "look_board": "Station board",
+      "kinds": "Colour by transport",
+      "kinds_hint": "Trains red, trams and metros blue, buses yellow, boats purple, cable cars green.",
+      "alarm": "Colour when it's time to leave",
+      "alarm_hint": "With a walk to the stop, the tile turns orange in the minute you should set off."
+     }
+    }
+   },
+   "readme": {
+    "en": "# Swiss departures\n\nLive Swiss public transport on a Tessera screen: when the next train, tram, bus, boat or cable car leaves any stop in\nSwitzerland, and every connection from one stop to another, with delays, platforms and platform changes. The times come\nfrom [transport.opendata.ch](https://transport.opendata.ch), the open service over the Swiss timetable and its real-time\ndata (every operator: SBB, BLS, ZVV, PostAuto and the rest). It needs no account and no key.\n\nNot made by or affiliated with SBB CFF FFS or any transport operator.\n\n## What it adds\n\n**Next departure.** The departures of one stop. On a single cell, the next one as big as the cell allows, with its line\n(S6, IC5, 14) and where it goes above it, and under it the platform and the two after it. On a tile of two columns or\nmore, a list: one row per departure with its platform and countdown.\n\n**Connections.** The trains from one stop to another, as the Swiss journey planner finds them: also a train that runs on\nbeyond your destination (from Solothurn to Zürich HB that is the IC 5, which goes on to Rorschach, and the IR 55). Each\nrow has the line, when it arrives, how many changes it takes, the platform and the countdown, under the title\n\"Solothurn -> Zürich HB\".\n\n**A card for each.** Tap a tile to open it. A Next departure tile shows every departure of its stop. A Connections tile\nshows every connection, with when it leaves and arrives, how long it takes, its changes, its platform and how full the\ntrain is (when the service knows). Tap a connection, on the card or in the tile's list, to see its legs: each train and\nwhere it goes, where and when you board and get off with the platforms, any walk, and the minutes you have to change.\nBack returns to the list.\n\n## Set up\n\n1. Add the plugin to a screen in Tessera (Plugins, or the Plugins tab of the screen). The screen builds once.\n2. In Layout, place **Next departure** or **Connections** from the library's Plugins group.\n3. In the inspector, under **Stop** (or **From** and **To**), type a few letters of the station or stop (`Zürich HB`,\n   `Bern, Bahnhof`, `Lausanne, Flon`) and pick it from the list.\n4. If you like, keep a Next departure tile to one **Transport** (train, tram, bus, boat, cable car), one **Line** or one\n   **Direction**, or a Connections tile to **Direct only**.\n5. Set **Walk to the stop** to the minutes you need. Departures you can no longer make are skipped, and the tile says\n   \"Leave in 3 min\", then \"Leave now\".\n6. Under **Colours**, choose its look (below).\n\n## Colours\n\n- **Look**: *Tessera* (the screen's own blue badges), *Swiss red* (red line badges, as on the boards in the stations) or\n  *Station board* (the tile a dark board with white words, in light and dark alike; its card takes the red badges).\n- **Colour by transport**: trains red, trams and metros blue, buses yellow, boats purple, cable cars green.\n- **Colour when it's time to leave**: with a walk to the stop, the tile turns orange in the minute you should set off.\n- The colours are the screen's own, so they follow its light and dark look. You can still give the tile a colour of\n  your own in the editor; the station board keeps its dark face.\n\n## Good to know\n\n- Tessera asks transport.opendata.ch once a minute per stop or connection, for every screen and tile together. The\n  screen counts down on its own clock in between: the next departure to the second (4:12, then 0:42), the ones after it\n  in minutes. The editor's preview shows whole minutes, by the timetable.\n- A departure that runs a minute or more late gets \"+2'\" behind where it goes, and its countdown includes the delay.\n  Turn **Show delays** off to leave the \"+2'\" out.\n- The platform (Pl. 7) or stand (Pl. D) shows when the service knows it. A platform that changed shows the new one,\n  in full ink on a list. Turn **Show platform** off to leave it out.\n- **Direction** keeps the departures whose *last* stop is that place. A Swiss stop usually serves both directions with\n  one id, so this is how a tile keeps to one side. For trains that only pass through a place, use **Connections**.\n- **Line** matches by line number. At a big station a train and a bus can share a number (S5 and IC5); set\n  **Transport** as well to keep them apart.\n- The Connections tile asks the journey planner for the next connections from now. A train that already left by the\n  timetable but runs late is not among them.\n- The legs of a connection are asked when you tap it, not before, so the card may say \"Asking for the route\" for a\n  moment.\n- A time an hour or more away is shown as a time of day; a departure that is due says \"now\".\n- When the service does not answer, the tile keeps the last times it had and says they may be old.\n- Works on every board. Built and used on a Guition 4-inch (ESP32-S3); checked on the bench on the CYD, a 4.3-inch\n  standing and a 10-inch screen.\n\n## Privacy\n\nTessera (the app in Home Assistant, not the screen) asks `transport.opendata.ch` for the departures of the stops you\nchoose, the connections between the From and To stops of a Connections tile, the legs of a connection you tap, and stop\nnames while you search in the inspector. The service sees the address of your Home Assistant, those stop ids, times and\nwhat you type in the search, nothing else. No key, account or personal data is sent.\n\n## How it works\n\n- `tessera-plugin.yaml`: the two tiles, their options, the card, and the fetches the app carries out: stops by name for\n  the search; the departures of a stop (and from the same answer, the lines and directions for the inspector); the\n  connections between two stops; and the legs of one connection, which the card asks for when you tap it.\n- `components/swiss_departures/`: the ESPHome component that draws the tiles and the card and counts down.\n- `translations/`: the words on the screen (`screen`) and in the app (`app`).\n\nData: [transport.opendata.ch](https://transport.opendata.ch) by Opendata.ch, from the Swiss open transport data platform\n([opentransportdata.swiss](https://opentransportdata.swiss)).\n"
+   },
+   "changelog": {
+    "en": "# Changelog\n\n## 1.0.0 - 2026-11-21\n- First release: the next departures from any Swiss stop, and every connection from one stop to another, live from\n  transport.opendata.ch, with delays, platforms and platform changes.\n- **Next departure** tile: find your stop by name, and keep to one kind of transport, one line or one direction.\n- **Connections** tile: every train from one stop to another (also one that runs on beyond your destination), with when\n  it arrives and its changes, under a title \"From -> To\".\n- A tap opens a card with every departure or connection; a tap on a connection shows its legs: each train, where you\n  board and get off with times and platforms, walks, and the minutes to change.\n- With a walk to the stop, departures you can no longer make are skipped and the tile says when to leave.\n- Colours: Tessera's blue, Swiss red line badges, or a dark station board; badges by transport if you like; and the\n  tile turns orange when it is time to leave.\n"
    },
    "image": "store.png"
   },
