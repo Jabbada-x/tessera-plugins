@@ -2,28 +2,28 @@
  "format": 1,
  "plugins": {
   "air_quality": {
-   "likes": 1,
-   "rating": null,
-   "ratings": 2,
-   "homes": 9
+   "likes": 2,
+   "rating": 5,
+   "ratings": 3,
+   "homes": 13
   },
   "av_wall_panel_controls": {
    "likes": 0,
    "rating": null,
-   "ratings": 1,
-   "homes": 4
+   "ratings": 2,
+   "homes": 7
   },
   "bt_proxy": {
    "likes": 2,
-   "rating": 4.7,
-   "ratings": 14,
-   "homes": 18
+   "rating": 4.6,
+   "ratings": 15,
+   "homes": 19
   },
   "buienradar": {
-   "likes": 3,
+   "likes": 4,
    "rating": 4.1,
-   "ratings": 17,
-   "homes": 23
+   "ratings": 18,
+   "homes": 26
   },
   "cinema": {
    "likes": 2,
@@ -32,21 +32,21 @@
    "homes": 2
   },
   "custom_card": {
-   "likes": 23,
+   "likes": 26,
    "rating": 4.7,
-   "ratings": 70,
-   "homes": 68
+   "ratings": 79,
+   "homes": 76
   },
   "dwd_rain": {
-   "likes": 3,
-   "rating": 3.9,
-   "ratings": 18,
-   "homes": 18
+   "likes": 4,
+   "rating": 4,
+   "ratings": 23,
+   "homes": 20
   },
   "electricity_price": {
    "likes": 5,
    "rating": 4.5,
-   "ratings": 10,
+   "ratings": 11,
    "homes": 11
   },
   "energidata_price": {
@@ -56,28 +56,28 @@
    "homes": 4
   },
   "energy_flow": {
-   "likes": 14,
+   "likes": 15,
    "rating": 4.3,
-   "ratings": 15,
-   "homes": 18
+   "ratings": 16,
+   "homes": 23
   },
   "flip_clock": {
-   "likes": 24,
-   "rating": 4.5,
-   "ratings": 99,
-   "homes": 64
+   "likes": 28,
+   "rating": 4.6,
+   "ratings": 112,
+   "homes": 68
   },
   "guition_relays": {
-   "likes": 3,
+   "likes": 4,
    "rating": 5,
-   "ratings": 28,
+   "ratings": 29,
    "homes": 19
   },
   "new_music": {
    "likes": 8,
    "rating": 4.7,
    "ratings": 13,
-   "homes": 19
+   "homes": 20
   },
   "ov_departures": {
    "likes": 3,
@@ -88,26 +88,26 @@
   "photo_clock": {
    "likes": 2,
    "rating": 4.6,
-   "ratings": 9,
-   "homes": 16
+   "ratings": 10,
+   "homes": 18
   },
   "photo_slideshow": {
-   "likes": 4,
-   "rating": 4.5,
-   "ratings": 4,
+   "likes": 5,
+   "rating": 4.6,
+   "ratings": 5,
    "homes": 14
   },
   "picture_frame": {
    "likes": 3,
    "rating": 4.5,
-   "ratings": 10,
-   "homes": 22
+   "ratings": 12,
+   "homes": 21
   },
   "plane_radar": {
-   "likes": 0,
-   "rating": 5,
-   "ratings": 3,
-   "homes": 6
+   "likes": 1,
+   "rating": 4.8,
+   "ratings": 5,
+   "homes": 7
   },
   "pollen": {
    "likes": 1,
@@ -124,14 +124,14 @@
   "screen_camera": {
    "likes": 8,
    "rating": 4.5,
-   "ratings": 22,
-   "homes": 34
+   "ratings": 26,
+   "homes": 42
   },
   "status_tile": {
-   "likes": 6,
+   "likes": 8,
    "rating": 4.6,
-   "ratings": 33,
-   "homes": 39
+   "ratings": 39,
+   "homes": 46
   },
   "sweden_public_transport": {
    "likes": 0,
@@ -140,7 +140,7 @@
    "homes": 1
   },
   "tankerkoenig": {
-   "likes": 2,
+   "likes": 5,
    "rating": 3.6,
    "ratings": 5,
    "homes": 4
@@ -152,70 +152,70 @@
    "homes": 18
   },
   "thermo_dial": {
-   "likes": 5,
-   "rating": 4.7,
-   "ratings": 21,
-   "homes": 25
+   "likes": 9,
+   "rating": 4.6,
+   "ratings": 25,
+   "homes": 32
   },
   "timers": {
-   "likes": 4,
-   "rating": 4.5,
-   "ratings": 24,
-   "homes": 28
+   "likes": 5,
+   "rating": 4.6,
+   "ratings": 27,
+   "homes": 32
   },
   "toothbrush": {
    "likes": 2,
    "rating": 4.4,
    "ratings": 7,
-   "homes": 6
+   "homes": 8
   },
   "vinyl_deck": {
    "likes": 2,
    "rating": 4.8,
-   "ratings": 4,
+   "ratings": 5,
    "homes": 12
   },
   "voice_assist": {
    "likes": 14,
    "rating": 4.5,
-   "ratings": 31,
-   "homes": 38
+   "ratings": 40,
+   "homes": 39
   },
   "waste_collection": {
-   "likes": 14,
-   "rating": 4.6,
-   "ratings": 39,
-   "homes": 37
+   "likes": 15,
+   "rating": 4.5,
+   "ratings": 44,
+   "homes": 41
   },
   "waste_overview": {
    "likes": 5,
    "rating": 4.3,
-   "ratings": 22,
-   "homes": 13
+   "ratings": 25,
+   "homes": 14
   },
   "waze_traveltime": {
    "likes": 4,
-   "rating": 4.6,
-   "ratings": 7,
-   "homes": 7
+   "rating": 4.4,
+   "ratings": 8,
+   "homes": 8
   },
   "weather_warnings": {
    "likes": 1,
-   "rating": 4.3,
+   "rating": 4.4,
    "ratings": 7,
    "homes": 7
   },
   "wifi_qr": {
-   "likes": 6,
-   "rating": 4.6,
-   "ratings": 13,
-   "homes": 10
+   "likes": 7,
+   "rating": 4.5,
+   "ratings": 16,
+   "homes": 11
   },
   "world_clock": {
    "likes": 4,
-   "rating": 4.5,
-   "ratings": 14,
-   "homes": 17
+   "rating": 4.6,
+   "ratings": 18,
+   "homes": 18
   }
  }
 }
