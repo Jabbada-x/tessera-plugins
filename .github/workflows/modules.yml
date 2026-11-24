@@ -1,0 +1,67 @@
+# The plugins' own code for the app's editor (tools/build_modules.py): a module per release the index lists, built
+# against Tessera's firmware preview of main and of dev, and published on the branch `modules`, where the app finds them
+# (modules/<number>/index.json and modules/<number>/<id>-<version>.wasm). It runs when the index of main or dev was
+# built again (a plugin changed, a community plugin released), when Tessera says its preview was built again (a
+# repository_dispatch `preview`, which is a new number), and by hand. A release that already has its module is left
+# alone, so most runs build nothing. Nothing of main or dev is touched: the branch `modules` holds only what is built.
+name: modules
+on:
+  workflow_run:
+    workflows: [index]
+    types: [completed]
+  repository_dispatch:
+    types: [preview]
+  workflow_dispatch:
+concurrency:
+  group: modules
+permissions:
+  contents: write
+jobs:
+  modules:
+    runs-on: ubuntu-latest
+    steps:
+      # Both indexes: main's plugins are built for the released firmware's preview, dev's for dev's.
+      - uses: actions/checkout@v4
+        with: { ref: main, path: plugins-main }
+      - uses: actions/checkout@v4
+        with: { ref: dev, path: plugins-dev }
+      - uses: actions/checkout@v4
+        with: { repository: MaxGramser/homeassistant_espscreen, ref: main, path: tessera-main }
+      - uses: actions/checkout@v4
+        with: { repository: MaxGramser/homeassistant_espscreen, ref: dev, path: tessera-dev }
+      - name: The branch the modules are published on
+        run: |
+          git clone --depth 1 --branch modules "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" out || {
+            mkdir out && cd out && git init -q -b modules
+            git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          }
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      # The Emscripten each preview is built with (Tessera's preview.yml pins it); a Tessera from before the preview
+      # took plugins has no build_plugin.py and is passed over.
+      - name: Build what is new
+        run: |
+          git clone --depth 1 https://github.com/emscripten-core/emsdk.git ~/emsdk
+          for branch in main dev; do
+            tree="$PWD/tessera-$branch"
+            [ -f "$tree/web/wasm/build_plugin.py" ] || { echo "Tessera $branch: no plugin modules yet"; continue; }
+            version=$(sed -n 's/.*EMSDK_VERSION: *"\(.*\)".*/\1/p' "$tree/.github/workflows/preview.yml")
+            ~/emsdk/emsdk install "$version" >/dev/null && ~/emsdk/emsdk activate "$version" >/dev/null
+            source ~/emsdk/emsdk_env.sh
+            TESSERA_TREE="$tree" PREVIEW_CACHE="$PWD/.preview-cache" python3 "plugins-$branch/tools/build_modules.py" \
+              --index "plugins-$branch/index.json" --out out || failed=1
+          done
+          exit "${failed:-0}"
+      - name: Publish
+        if: always()
+        run: |
+          cd out
+          git add -A modules
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -q -m "Modules: built for $(git -C ../plugins-dev rev-parse --short=7 HEAD)"
+            git push -q origin modules
+          fi
