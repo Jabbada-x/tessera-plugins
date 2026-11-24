@@ -16,7 +16,7 @@
   "bt_proxy": {
    "likes": 2,
    "rating": 4.6,
-   "ratings": 15,
+   "ratings": 16,
    "homes": 19
   },
   "buienradar": {
@@ -59,7 +59,7 @@
    "likes": 15,
    "rating": 4.3,
    "ratings": 16,
-   "homes": 23
+   "homes": 24
   },
   "flip_clock": {
    "likes": 28,
@@ -71,7 +71,7 @@
    "likes": 4,
    "rating": 5,
    "ratings": 29,
-   "homes": 19
+   "homes": 18
   },
   "new_music": {
    "likes": 8,
@@ -131,7 +131,7 @@
    "likes": 8,
    "rating": 4.6,
    "ratings": 39,
-   "homes": 46
+   "homes": 47
   },
   "sweden_public_transport": {
    "likes": 0,
