@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-24T04:39:36Z",
+ "generated": "2026-11-24T04:45:56Z",
  "plugin_api": "0.28",
  "blocked": [],
  "featured": [
@@ -102,6 +102,11 @@
    "repo": "https://github.com/maxgramser/tessera-plugins",
    "repo_id": 1408945265,
    "path": "plugins/new_music"
+  },
+  "ora": {
+   "repo": "https://github.com/coolatos/tessera-plugin-ora",
+   "repo_id": 1465307966,
+   "path": "."
   },
   "ov_departures": {
    "repo": "https://github.com/maxgramser/tessera-plugins",
@@ -8332,6 +8337,810 @@
    },
    "changelog": {
     "en": "# Changelog\n\n## 0.1.3 - 2026-11-19\n- The control card says \"Waiting for the player\" once, in its title, while the player's data is on its way.\n\n## 0.1.2 - 2026-11-19\n- A Jellyfin app that cannot be controlled remotely shows no keys and no Library any more, instead of keys that did\n  nothing.\n- The sessions tile keeps a player whose data did not fit the screen's message, as \"No data\", instead of leaving it out.\n- Long names and titles are cut on a whole letter; the screen redraws less every second.\n- The library on a small screen (the CYD) no longer draws a row under the page keys. It stops waiting after 20\n  seconds without an answer, and a tap on \"Couldn't read the library\" tries again. Its note no longer claims a folder\n  was cut: it says there may be more.\n- The control card says \"Loading…\" while the player's data is on its way, instead of \"Nothing playing\" and \"Offline\".\n- The README says how to find the right player when a TV shows up several times, which Jellyfin apps take commands,\n  and how to show the cover as a screensaver.\n\n## 0.1.1 - 2026-11-10\n- The library now opens a library, a series or an album: it asks Home Assistant with the folder's type, which\n  Home Assistant needs beside its id.\n\n## 0.1.0 - 2026-11-10\n- First version: a now playing tile of one Jellyfin client (cover, title, series and episode or artist, progress), a\n  sessions tile of up to eight clients, a control card (play and pause, seek, stop, volume, mute) and a library card\n  that browses your libraries and plays what you tap. Needs Home Assistant's Jellyfin integration (see the README).\n"
+   },
+   "image": "store.png"
+  },
+  {
+   "id": "ora",
+   "repo": "https://github.com/coolatos/tessera-plugin-ora",
+   "repo_id": 1465307966,
+   "path": ".",
+   "label": "community",
+   "status": "ok",
+   "release": {
+    "version": "1.0.0",
+    "sha": "7160a24855137f030194dc5933ddf24cc9ae892a",
+    "date": "2026-11-21",
+    "tag": "v1.0.0"
+   },
+   "manifest": {
+    "id": "ora",
+    "version": "1.0.0",
+    "api": "0.14",
+    "icon": "clock-outline",
+    "maintainer": "CooLaToS",
+    "license": "MIT",
+    "stage": "beta",
+    "topics": [
+     "time"
+    ],
+    "requires": {
+     "esphome": "2026.6.2"
+    },
+    "boards": "any",
+    "flash_kb": 6,
+    "savers": [
+     {
+      "id": "ora",
+      "name": "saver_name",
+      "icon": "clock-outline",
+      "step": "clock",
+      "memory": 2200,
+      "example": "saver_example",
+      "options": [
+       {
+        "id": "digits",
+        "kind": "choice",
+        "label": "digits",
+        "hint": "digits_hint",
+        "default": "gold",
+        "choices": [
+         {
+          "value": "gold",
+          "label": "c_gold"
+         },
+         {
+          "value": "champagne",
+          "label": "c_champagne"
+         },
+         {
+          "value": "amber",
+          "label": "c_amber"
+         },
+         {
+          "value": "orange",
+          "label": "c_orange"
+         },
+         {
+          "value": "red",
+          "label": "c_red"
+         },
+         {
+          "value": "pink",
+          "label": "c_pink"
+         },
+         {
+          "value": "purple",
+          "label": "c_purple"
+         },
+         {
+          "value": "blue",
+          "label": "c_blue"
+         },
+         {
+          "value": "teal",
+          "label": "c_teal"
+         },
+         {
+          "value": "green",
+          "label": "c_green"
+         },
+         {
+          "value": "oak",
+          "label": "c_oak"
+         },
+         {
+          "value": "walnut",
+          "label": "c_walnut"
+         },
+         {
+          "value": "mint",
+          "label": "c_mint"
+         },
+         {
+          "value": "white",
+          "label": "c_white"
+         },
+         {
+          "value": "grey",
+          "label": "c_grey"
+         }
+        ]
+       },
+       {
+        "id": "minutes",
+        "kind": "choice",
+        "label": "minutes",
+        "hint": "minutes_hint",
+        "default": "same",
+        "choices": [
+         {
+          "value": "same",
+          "label": "c_same"
+         },
+         {
+          "value": "gold",
+          "label": "c_gold"
+         },
+         {
+          "value": "champagne",
+          "label": "c_champagne"
+         },
+         {
+          "value": "amber",
+          "label": "c_amber"
+         },
+         {
+          "value": "orange",
+          "label": "c_orange"
+         },
+         {
+          "value": "red",
+          "label": "c_red"
+         },
+         {
+          "value": "pink",
+          "label": "c_pink"
+         },
+         {
+          "value": "purple",
+          "label": "c_purple"
+         },
+         {
+          "value": "blue",
+          "label": "c_blue"
+         },
+         {
+          "value": "teal",
+          "label": "c_teal"
+         },
+         {
+          "value": "green",
+          "label": "c_green"
+         },
+         {
+          "value": "oak",
+          "label": "c_oak"
+         },
+         {
+          "value": "walnut",
+          "label": "c_walnut"
+         },
+         {
+          "value": "mint",
+          "label": "c_mint"
+         },
+         {
+          "value": "white",
+          "label": "c_white"
+         },
+         {
+          "value": "grey",
+          "label": "c_grey"
+         }
+        ]
+       },
+       {
+        "id": "boxes",
+        "kind": "choice",
+        "label": "boxes",
+        "hint": "boxes_hint",
+        "default": "graphite",
+        "choices": [
+         {
+          "value": "graphite",
+          "label": "c_graphite"
+         },
+         {
+          "value": "tint",
+          "label": "c_tint"
+         },
+         {
+          "value": "gold",
+          "label": "c_gold"
+         },
+         {
+          "value": "champagne",
+          "label": "c_champagne"
+         },
+         {
+          "value": "amber",
+          "label": "c_amber"
+         },
+         {
+          "value": "orange",
+          "label": "c_orange"
+         },
+         {
+          "value": "red",
+          "label": "c_red"
+         },
+         {
+          "value": "pink",
+          "label": "c_pink"
+         },
+         {
+          "value": "purple",
+          "label": "c_purple"
+         },
+         {
+          "value": "blue",
+          "label": "c_blue"
+         },
+         {
+          "value": "teal",
+          "label": "c_teal"
+         },
+         {
+          "value": "green",
+          "label": "c_green"
+         },
+         {
+          "value": "oak",
+          "label": "c_oak"
+         },
+         {
+          "value": "walnut",
+          "label": "c_walnut"
+         },
+         {
+          "value": "mint",
+          "label": "c_mint"
+         },
+         {
+          "value": "white",
+          "label": "c_white"
+         },
+         {
+          "value": "grey",
+          "label": "c_grey"
+         }
+        ]
+       },
+       {
+        "id": "style",
+        "kind": "choice",
+        "label": "style",
+        "hint": "style_hint",
+        "default": "cards",
+        "choices": [
+         {
+          "value": "cards",
+          "label": "s_cards"
+         },
+         {
+          "value": "outline",
+          "label": "s_outline"
+         },
+         {
+          "value": "plain",
+          "label": "s_plain"
+         }
+        ]
+       },
+       {
+        "id": "size",
+        "kind": "choice",
+        "label": "size",
+        "hint": "size_hint",
+        "default": "large",
+        "choices": [
+         {
+          "value": "large",
+          "label": "z_large"
+         },
+         {
+          "value": "stacked",
+          "label": "z_stacked"
+         },
+         {
+          "value": "normal",
+          "label": "z_normal"
+         }
+        ]
+       },
+       {
+        "id": "date_format",
+        "kind": "choice",
+        "label": "date_format",
+        "hint": "date_format_hint",
+        "default": "short",
+        "choices": [
+         {
+          "value": "short",
+          "label": "f_short"
+         },
+         {
+          "value": "numeric",
+          "label": "f_numeric"
+         },
+         {
+          "value": "long",
+          "label": "f_long"
+         },
+         {
+          "value": "weekday_long",
+          "label": "f_weekday_long"
+         },
+         {
+          "value": "weekday",
+          "label": "f_weekday"
+         },
+         {
+          "value": "none",
+          "label": "f_none"
+         }
+        ]
+       },
+       {
+        "id": "row",
+        "kind": "choice",
+        "label": "row",
+        "hint": "row_hint",
+        "default": "icons",
+        "choices": [
+         {
+          "value": "icons",
+          "label": "r_icons"
+         },
+         {
+          "value": "full",
+          "label": "r_full"
+         },
+         {
+          "value": "off",
+          "label": "r_off"
+         }
+        ]
+       },
+       {
+        "id": "date",
+        "kind": "choice",
+        "label": "date",
+        "hint": "date_hint",
+        "default": "soft",
+        "choices": [
+         {
+          "value": "soft",
+          "label": "c_soft"
+         },
+         {
+          "value": "same",
+          "label": "c_same"
+         },
+         {
+          "value": "gold",
+          "label": "c_gold"
+         },
+         {
+          "value": "champagne",
+          "label": "c_champagne"
+         },
+         {
+          "value": "amber",
+          "label": "c_amber"
+         },
+         {
+          "value": "orange",
+          "label": "c_orange"
+         },
+         {
+          "value": "red",
+          "label": "c_red"
+         },
+         {
+          "value": "pink",
+          "label": "c_pink"
+         },
+         {
+          "value": "purple",
+          "label": "c_purple"
+         },
+         {
+          "value": "blue",
+          "label": "c_blue"
+         },
+         {
+          "value": "teal",
+          "label": "c_teal"
+         },
+         {
+          "value": "green",
+          "label": "c_green"
+         },
+         {
+          "value": "oak",
+          "label": "c_oak"
+         },
+         {
+          "value": "walnut",
+          "label": "c_walnut"
+         },
+         {
+          "value": "mint",
+          "label": "c_mint"
+         },
+         {
+          "value": "white",
+          "label": "c_white"
+         },
+         {
+          "value": "grey",
+          "label": "c_grey"
+         }
+        ]
+       },
+       {
+        "id": "temperature",
+        "kind": "choice",
+        "label": "temperature",
+        "hint": "temperature_hint",
+        "default": "same",
+        "choices": [
+         {
+          "value": "same",
+          "label": "c_same"
+         },
+         {
+          "value": "soft",
+          "label": "c_soft"
+         },
+         {
+          "value": "gold",
+          "label": "c_gold"
+         },
+         {
+          "value": "champagne",
+          "label": "c_champagne"
+         },
+         {
+          "value": "amber",
+          "label": "c_amber"
+         },
+         {
+          "value": "orange",
+          "label": "c_orange"
+         },
+         {
+          "value": "red",
+          "label": "c_red"
+         },
+         {
+          "value": "pink",
+          "label": "c_pink"
+         },
+         {
+          "value": "purple",
+          "label": "c_purple"
+         },
+         {
+          "value": "blue",
+          "label": "c_blue"
+         },
+         {
+          "value": "teal",
+          "label": "c_teal"
+         },
+         {
+          "value": "green",
+          "label": "c_green"
+         },
+         {
+          "value": "oak",
+          "label": "c_oak"
+         },
+         {
+          "value": "walnut",
+          "label": "c_walnut"
+         },
+         {
+          "value": "mint",
+          "label": "c_mint"
+         },
+         {
+          "value": "white",
+          "label": "c_white"
+         },
+         {
+          "value": "grey",
+          "label": "c_grey"
+         }
+        ]
+       },
+       {
+        "id": "night",
+        "kind": "choice",
+        "label": "night",
+        "hint": "night_hint",
+        "default": "off",
+        "choices": [
+         {
+          "value": "off",
+          "label": "c_off"
+         },
+         {
+          "value": "dim",
+          "label": "c_dim"
+         },
+         {
+          "value": "gold",
+          "label": "c_gold"
+         },
+         {
+          "value": "champagne",
+          "label": "c_champagne"
+         },
+         {
+          "value": "amber",
+          "label": "c_amber"
+         },
+         {
+          "value": "orange",
+          "label": "c_orange"
+         },
+         {
+          "value": "red",
+          "label": "c_red"
+         },
+         {
+          "value": "pink",
+          "label": "c_pink"
+         },
+         {
+          "value": "purple",
+          "label": "c_purple"
+         },
+         {
+          "value": "blue",
+          "label": "c_blue"
+         },
+         {
+          "value": "teal",
+          "label": "c_teal"
+         },
+         {
+          "value": "green",
+          "label": "c_green"
+         },
+         {
+          "value": "oak",
+          "label": "c_oak"
+         },
+         {
+          "value": "walnut",
+          "label": "c_walnut"
+         },
+         {
+          "value": "mint",
+          "label": "c_mint"
+         },
+         {
+          "value": "white",
+          "label": "c_white"
+         },
+         {
+          "value": "grey",
+          "label": "c_grey"
+         }
+        ]
+       },
+       {
+        "id": "leading_zero",
+        "kind": "toggle",
+        "label": "leading_zero",
+        "hint": "leading_zero_hint",
+        "default": true
+       },
+       {
+        "id": "seconds",
+        "kind": "toggle",
+        "label": "seconds",
+        "hint": "seconds_hint",
+        "default": true
+       }
+      ]
+     }
+    ]
+   },
+   "translations": {
+    "el": {
+     "_meta": {
+      "name": "Ελληνικά"
+     },
+     "screen": {
+      "date_numeric": "{day}/{month}",
+      "date_long": "{day} {month}",
+      "date_weekday_long": "{weekday} {day} {month}",
+      "date_weekday": "{weekday}",
+      "day_1": "Κυριακή",
+      "day_2": "Δευτέρα",
+      "day_3": "Τρίτη",
+      "day_4": "Τετάρτη",
+      "day_5": "Πέμπτη",
+      "day_6": "Παρασκευή",
+      "day_7": "Σάββατο",
+      "month_1": "Ιανουαρίου",
+      "month_2": "Φεβρουαρίου",
+      "month_3": "Μαρτίου",
+      "month_4": "Απριλίου",
+      "month_5": "Μαΐου",
+      "month_6": "Ιουνίου",
+      "month_7": "Ιουλίου",
+      "month_8": "Αυγούστου",
+      "month_9": "Σεπτεμβρίου",
+      "month_10": "Οκτωβρίου",
+      "month_11": "Νοεμβρίου",
+      "month_12": "Δεκεμβρίου"
+     },
+     "app": {
+      "name": "Ώρα",
+      "summary": "Ένα μεγάλο ρολόι για screensaver στα χρώματά σας, με το εικονίδιο του καιρού, διχρωμία και νυχτερινό θέμα.",
+      "saver_name": "Ώρα",
+      "saver_example": "Η ώρα με μεγάλα ψηφία στα χρώματά σας, και από κάτω η ημερομηνία και 21°.",
+      "digits": "Χρώμα ωρών",
+      "digits_hint": "Το χρώμα των ωρών, και των λεπτών εκτός αν τους δώσετε δικό τους.",
+      "minutes": "Χρώμα λεπτών",
+      "minutes_hint": "Ίδιο με τις ώρες, ή δεύτερο χρώμα για διχρωμία.",
+      "boxes": "Χρώμα πλαισίων",
+      "boxes_hint": "Κάρτες σε γραφίτη, κάρτες με απόχρωση του χρώματος των ωρών, ή δικό τους χρώμα. Στο «Περίγραμμα», ορίζει το χρώμα της γραμμής.",
+      "style": "Στυλ",
+      "style_hint": "Κάρτες flip, ένα περίγραμμα γύρω από τα ψηφία, ή απλά ψηφία με άνω και κάτω τελεία.",
+      "size": "Μέγεθος",
+      "size_hint": "Μεγάλο: δίπλα-δίπλα, σε όλο το πλάτος της οθόνης (ιδανικό για τετράγωνη ή πλατιά οθόνη). Κάθετο: οι ώρες πάνω από τα λεπτά (ιδανικό για κάθετη/ψηλή οθόνη). Κανονικό: το προεπιλεγμένο μέγεθος ψηφίων της οθόνης.",
+      "date_format": "Ημερομηνία",
+      "date_format_hint": "Πώς γράφεται η ημερομηνία κάτω από το ρολόι, με ή χωρίς το όνομα της ημέρας, ή χωρίς ημερομηνία.",
+      "date": "Χρώμα ημερομηνίας",
+      "date_hint": "Το χρώμα της ημερομηνίας.",
+      "temperature": "Χρώμα θερμοκρασίας",
+      "temperature_hint": "Το χρώμα της θερμοκρασίας, των εικονιδίων και κειμένων της σειράς, καθώς και των ΠΜ/ΜΜ.",
+      "night": "Νυχτερινό χρώμα",
+      "night_hint": "Κατά τις νυχτερινές ώρες της οθόνης: τα ίδια χρώματα, τα ίδια πιο αχνά, ή ένα ενιαίο χρώμα για όλο το ρολόι. Ενεργοποιείται όταν ξεκινά το screensaver.",
+      "leading_zero": "Μηδενικό μπροστά",
+      "leading_zero_hint": "09:05 αν είναι ενεργό, 9:05 αν είναι ανενεργό.",
+      "seconds": "Τελεία δευτερολέπτων",
+      "seconds_hint": "Μια τελεία (άνω και κάτω τελεία στα απλά ψηφία) που αναβοσβήνει κάθε δευτερόλεπτο.",
+      "s_cards": "Κάρτες flip",
+      "s_outline": "Περίγραμμα",
+      "s_plain": "Απλά ψηφία",
+      "z_large": "Μεγάλο",
+      "z_stacked": "Κάθετο",
+      "z_normal": "Κανονικό",
+      "f_short": "Παρ 20 Νοε",
+      "f_numeric": "20/11",
+      "f_long": "20 Νοεμβρίου",
+      "f_none": "Χωρίς ημερομηνία",
+      "f_weekday_long": "Παρασκευή 20 Νοεμβρίου",
+      "f_weekday": "Παρασκευή",
+      "c_same": "Ίδιο με τις ώρες",
+      "c_soft": "Απαλό λευκό",
+      "c_graphite": "Γραφίτης",
+      "c_tint": "Με απόχρωση",
+      "c_off": "Ίδιο με τη μέρα",
+      "c_dim": "Πιο σκούρο",
+      "c_gold": "Χρυσό",
+      "c_champagne": "Σαμπανιζέ",
+      "c_amber": "Κεχριμπαρένιο",
+      "c_orange": "Πορτοκαλί",
+      "c_red": "Κόκκινο",
+      "c_pink": "Ροζ",
+      "c_purple": "Μωβ",
+      "c_blue": "Μπλε",
+      "c_teal": "Γαλαζοπράσινο",
+      "c_green": "Πράσινο",
+      "c_white": "Λευκό",
+      "c_grey": "Νυχτερινό γκρι",
+      "c_oak": "Δρυς",
+      "c_walnut": "Καρυδιά",
+      "c_mint": "Μέντα",
+      "row": "Καιρός και οντότητες",
+      "row_hint": "Οι οντότητες που προσθέτετε στη σειρά του Ρολογιού (στο + δίπλα στο ρολόι): μια οντότητα καιρού εμφανίζει την κατάστασή του (ήλιος, σύννεφο ή βροχή). Εμφάνιση μόνο εικονιδίων, εικονιδίων και κειμένου, ή τίποτα.",
+      "r_icons": "Εικονίδια",
+      "r_full": "Εικονίδια και κείμενο",
+      "r_off": "Ανενεργό"
+     }
+    },
+    "en": {
+     "_meta": {
+      "name": "English"
+     },
+     "screen": {
+      "date_numeric": "{day}/{month}",
+      "date_long": "{day} {month}",
+      "day_1": "Sunday",
+      "day_2": "Monday",
+      "day_3": "Tuesday",
+      "day_4": "Wednesday",
+      "day_5": "Thursday",
+      "day_6": "Friday",
+      "day_7": "Saturday",
+      "month_1": "January",
+      "month_2": "February",
+      "month_3": "March",
+      "month_4": "April",
+      "month_5": "May",
+      "month_6": "June",
+      "month_7": "July",
+      "month_8": "August",
+      "month_9": "September",
+      "month_10": "October",
+      "month_11": "November",
+      "month_12": "December",
+      "date_weekday_long": "{weekday} {day} {month}",
+      "date_weekday": "{weekday}"
+     },
+     "app": {
+      "name": "Ora",
+      "summary": "A big clock for the screensaver in your colours, with the weather's icon, two tones and a night colour.",
+      "saver_name": "Ora",
+      "saver_example": "The time large in your colours, the date and 21° under it",
+      "digits": "Hours colour",
+      "digits_hint": "The colour of the hours, and of the minutes unless you give them their own.",
+      "minutes": "Minutes colour",
+      "minutes_hint": "Same as the hours, or a second colour for two tones.",
+      "boxes": "Box colour",
+      "boxes_hint": "Graphite cards, cards tinted with the hours' colour, or a colour of their own. With Outline it is the line's colour.",
+      "style": "Style",
+      "style_hint": "Flip cards, an outline around the digits, or plain digits with a colon.",
+      "size": "Size",
+      "size_hint": "Large: side by side, as wide as the screen (best on a square or wide screen). Stacked: hours above minutes (best on a tall screen). Normal: the screen's own digit size.",
+      "date_format": "Date",
+      "date_format_hint": "How the date under the clock is written, with or without the day's name, or no date.",
+      "date": "Date colour",
+      "date_hint": "The colour of the date.",
+      "temperature": "Temperature colour",
+      "temperature_hint": "The colour of the temperature, of the row's icons and words, and of AM or PM.",
+      "night": "Night colour",
+      "night_hint": "During the screen's night hours: the same colours, the same but dimmer, or one colour for the whole clock. It changes when the screensaver comes on.",
+      "leading_zero": "Leading zero",
+      "leading_zero_hint": "09:05 with it, 9:05 without.",
+      "seconds": "Seconds dot",
+      "seconds_hint": "A dot (a colon in plain digits) that blinks every second.",
+      "s_cards": "Flip cards",
+      "s_outline": "Outline",
+      "s_plain": "Plain digits",
+      "z_large": "Large",
+      "z_stacked": "Stacked",
+      "z_normal": "Normal",
+      "f_short": "Fri 20 Nov",
+      "f_numeric": "20/11",
+      "f_long": "20 November",
+      "f_none": "No date",
+      "c_same": "Same as the hours",
+      "c_soft": "Soft white",
+      "c_graphite": "Graphite",
+      "c_tint": "Tinted",
+      "c_off": "Same as by day",
+      "c_dim": "Dimmer",
+      "c_gold": "Gold",
+      "c_champagne": "Champagne",
+      "c_amber": "Amber",
+      "c_orange": "Orange",
+      "c_red": "Red",
+      "c_pink": "Pink",
+      "c_purple": "Purple",
+      "c_blue": "Blue",
+      "c_teal": "Teal",
+      "c_green": "Green",
+      "c_white": "White",
+      "c_grey": "Night grey",
+      "row": "Weather and entities",
+      "row_hint": "The entities you add to the Clock step's row (+ beside the clock): a weather entity shows its condition, sun, cloud or rain. Their icons, their icons and words, or nothing.",
+      "r_icons": "Icons",
+      "r_full": "Icons and words",
+      "r_off": "Off",
+      "f_weekday_long": "Friday 20 November",
+      "f_weekday": "Friday",
+      "c_oak": "Oak",
+      "c_walnut": "Walnut",
+      "c_mint": "Mint"
+     }
+    }
+   },
+   "readme": {
+    "en": "# Ora\n\nA big clock for Tessera's screensaver, in the colours you choose. Ora (Greek for \"hour\") shows the hours and the\nminutes in two boxes as large as the screen allows, with the date, the weather's icon and the outside temperature under\nthem.\n\n![Ora on a 10-inch, a 4-inch square and a 2.8-inch screen](store.png)\n\n## Set up\n\n1. In Tessera, open **Plugins**, choose **Add with a link** and paste `https://github.com/CooLaToS/tessera-plugin-ora`\n   (or find **Ora** in the list once it is listed there). Add it to a screen; the screen builds once.\n2. Open the screen's **Settings** and the **Screensaver** card. Turn on **Show in standby** (the screen needs\n   **Auto standby** on too).\n3. Click the **Clock** step and choose **Ora** under **Face**.\n4. Pick the colours, the style and the size in the same drawer.\n5. For the weather's icon: in the same drawer, press **+** beside the clock, add your weather entity and choose\n   **Icon** under **Shows**.\n\n## Examples\n\nEvery picture is the real firmware with Ora, drawn by Tessera's plugin bench on a Guition 4-inch (480 x 480) unless it\nsays otherwise. Under each one, the options that make it.\n\n| | |\n|---|---|\n| ![Gold flip cards](docs/images/gold-flip-cards.png) | ![White on blue](docs/images/white-on-blue.png) |\n| **Gold flip cards**: the defaults. | **White on blue**: hours White, boxes Blue. |\n| ![Teal outline, normal size](docs/images/teal-outline-normal.png) | ![Two tones on tinted cards](docs/images/two-tone-tinted.png) |\n| **Normal size**: hours Teal, style Outline, size Normal, date 20 November. | **Two tones**: hours Gold, minutes Champagne, boxes Tinted, date 20/11, row Icons and words. |\n\n<details>\n<summary><b>Show all examples</b> (six more: wood tones, stacked, plain, a CYD and a 10-inch)</summary>\n\n| | |\n|---|---|\n| ![Walnut boxes](docs/images/walnut-champagne-mint.png) | ![Oak and walnut](docs/images/oak-walnut-weekday.png) |\n| **Wood**: hours Champagne, boxes Walnut, date and temperature Mint, date 20/11, row Icons and words. | **Oak and walnut**: hours Oak, minutes Champagne, boxes Walnut, date Oak, date Friday 20 November. |\n| ![Champagne outline, stacked](docs/images/champagne-outline-stacked.png) | ![Plain amber](docs/images/amber-plain.png) |\n| **Outline, stacked**: hours Champagne, style Outline, size Stacked, date Friday 20 November. | **Plain**: hours Amber, style Plain digits, no leading zero, no seconds dot, no date, row Off. |\n| ![On a CYD](docs/images/cyd-gold.png) | ![On a 10-inch screen](docs/images/p4-10inch-two-tone.png) |\n| **CYD 2.8-inch** (320 x 240): the defaults. | **Guition 10.1-inch** (1280 x 800): two tones. |\n\n</details>\n\n## Options\n\n- **Hours colour** and **Minutes colour**: Gold (default), Champagne, Amber, Orange, Red, Pink, Purple, Blue, Teal,\n  Green, Oak, Walnut, Mint, White or Night grey. Give the minutes their own colour for two tones.\n- **Box colour**: Graphite flip cards, cards Tinted with the hours' colour, or any colour above. With **Outline** it is\n  the colour of the line.\n- **Style**: Flip cards, Outline, or Plain digits with a colon.\n- **Size**: Large (side by side, as wide as the screen; best on a square or wide screen), Stacked (hours above\n  minutes; best on a tall screen) or Normal (the screen's own digit size).\n- **Date**: Fri 20 Nov, 20/11, 20 November, Friday 20 November, Friday, or no date.\n- **Weather and entities**: the entities you add to the Clock step's row (the **+** beside the clock in the Clock\n  drawer). A weather entity shows its condition, sun, cloud or rain, before the temperature. Icons (default), icons and\n  words, or off. Up to four; those that do not fit the width are left out.\n- **Date colour** and **Temperature colour** (also the colour of the row's icons).\n- **Night colour**: during the screen's night hours the same colours, the same but dimmer, or one colour for the whole\n  clock (deep red is easy on the eyes).\n- **Leading zero** (09:05 or 9:05) and **Seconds dot**.\n\n## Tried on\n\n- **Real screens**: two Guition ESP32-S3-4848S040 (4-inch, 480 x 480) with Tessera 0.4.99 and firmware 0.62.0, one\n  on a wall and one on a desk: the gold flip cards in Large, the minute changing, the seconds dot, the date and the\n  temperature, in standby by day. The other styles and colours are from the bench so far.\n- **The bench** of tessera-plugins (the real firmware, built for a computer): the CYD 2.8-inch, the Guition 4-inch,\n  the Waveshare 4.3-inch standing up and the Guition 10.1-inch, every option.\n- **The firmware build** on GitHub (`.github/workflows/build.yml`) compiles Ora into the newest Tessera release for the\n  CYD (ESP32, 4 MB), the Guition 4-inch (ESP32-S3) and the Guition 10.1-inch V3 (ESP32-P4), at every change and\n  every Monday.\n- Every screen Tessera supports can run it (`boards: any`) once it has plugin API 0.14. Screens that never go into\n  standby, such as the Waveshare 4.3-inch, show no screensaver at all, so no Ora either.\n- On a large screen (7 and 10 inch) the clock stays in the middle at three times the digits' own size instead of\n  filling the glass: larger, the scaled digits show their pixels.\n\nTried it on another screen? Tell me how it looks in a [\"Tried it on my screen\" issue](https://github.com/CooLaToS/tessera-plugin-ora/issues/new/choose).\n\n## Privacy\n\nOra makes no connections and performs no Home Assistant actions. It draws only what Tessera's clock step hands every\nface: the time, the outside temperature and the entities you put in the clock's row.\n\n## Good to know\n\n- Any colour on any box stays readable: when the digits would not stand out enough from their box (red on blue, say),\n  Ora darkens the box until they do.\n- The weather icon needs a Tessera release with the fix for\n  [MaxGramser/homeassistant_espscreen#448](https://github.com/MaxGramser/homeassistant_espscreen/issues/448): up to\n  Tessera 0.4.99 a plugin's clock face receives the row's icons as 0, so Ora shows the date and the temperature without\n  the icon. Nothing to change in Ora: the icon appears once Tessera hands it over.\n- Large and Stacked scale the screen's largest digits up (a plugin brings no font of its own), so they are a little\n  softer than the font's own size.\n- The night colour is chosen when the screensaver comes on. If the night hours begin while the clock is already showing,\n  it changes the next time the screen goes to standby.\n- The screen moves the whole clock a millimetre every minute, so nothing stands on the same pixels for hours.\n- A screen without the plugin shows Tessera's own clock.\n- English and Greek. The Greek texts show once Tessera itself speaks Greek: its editor and its screens' fonts do not\n  have Greek yet.\n\n## Tests\n\n```sh\nuv run tests/run.py              # unit, check and bench\nuv run tests/run.py unit         # only the unit tests of the face's logic (seconds)\n```\n\n- **unit**: `components/ora/ora_logic.h` (the choices, the time and date texts, the line under the clock, where every\n  part stands on every kind of screen, and the contrast of every colour on every box) compiled for your computer with\n  the sanitizers, `tests/test_logic.cpp`.\n- **check**: Tessera's `tools/check.py`.\n- **bench**: Tessera's bench in strict mode: the showcase on four kinds of screen, then the layout combinations of\n  `tests/combos.py` on the Guition 4-inch. Any finding fails. `ORA_FULL=1` renders all 486 combinations.\n\nThe check and the bench need a clone of [tessera-plugins](https://github.com/MaxGramser/tessera-plugins) beside this\nrepository (or `TESSERA_PLUGINS=<path>`), its bench set up once (`python3 tools/preview.py --setup` there).\n\nOn GitHub, `check.yml` runs the unit tests, Tessera's check and a secret scan, `build.yml` the firmware builds (at\nevery change and every Monday), `tessera-watch.yml` builds again the day a new Tessera release comes out, and\n`release.yml` publishes a release from a `v*` tag only when the check and the builds pass.\n\n## Bugs, ideas and pull requests\n\nFound a bug, tried Ora on a new screen or have an idea? Open an\n[issue](https://github.com/CooLaToS/tessera-plugin-ora/issues/new/choose); the forms ask for what is needed. Pull\nrequests for fixes, translations and small improvements are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first:\nit has the rules and the checks to run.\n\n## Credits\n\nThe layout of the flip cards follows Tessera's own Flip clock example (MIT, Max Gramser). Ora is written from\nTessera's plugin template.\n"
+   },
+   "changelog": {
+    "en": "# Changelog\n\n## 1.0.0\n- First version: a face of the screensaver's clock. Hours and minutes in two boxes (flip cards, outline or plain),\n  Large, Stacked or Normal; fifteen colours (wood tones and mint among them) with two tones, a box colour of their\n  own and a night colour (or dimmer at night); the date in six forms (with or without the weekday), the weather's\n  icon and the clock's row of entities, the temperature, leading zero and seconds dot.\n- Coloured digits on a coloured box are kept readable: the box darkens until they stand out.\n- Needs a screen with plugin API 0.14 or newer. The weather icon needs a Tessera release with the fix for\n  MaxGramser/homeassistant_espscreen#448.\n"
    },
    "image": "store.png"
   },
