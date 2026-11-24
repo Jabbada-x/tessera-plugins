@@ -11,7 +11,7 @@
    "likes": 0,
    "rating": null,
    "ratings": 2,
-   "homes": 6
+   "homes": 7
   },
   "bt_proxy": {
    "likes": 2,
@@ -125,7 +125,7 @@
    "likes": 8,
    "rating": 4.5,
    "ratings": 26,
-   "homes": 41
+   "homes": 42
   },
   "status_tile": {
    "likes": 8,
@@ -213,8 +213,8 @@
   },
   "world_clock": {
    "likes": 4,
-   "rating": 4.5,
-   "ratings": 17,
+   "rating": 4.6,
+   "ratings": 18,
    "homes": 18
   }
  }
