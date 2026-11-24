@@ -58,6 +58,7 @@ jobs:
         if: always()
         run: |
           cd out
+          [ -d modules ] || exit 0
           git add -A modules
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
