@@ -5,12 +5,12 @@
    "likes": 2,
    "rating": 4.7,
    "ratings": 6,
-   "homes": 16
+   "homes": 17
   },
   "av_wall_panel_controls": {
    "likes": 0,
-   "rating": null,
-   "ratings": 2,
+   "rating": 4.3,
+   "ratings": 3,
    "homes": 8
   },
   "bt_proxy": {
@@ -23,7 +23,7 @@
    "likes": 4,
    "rating": 4.2,
    "ratings": 20,
-   "homes": 26
+   "homes": 27
   },
   "cinema": {
    "likes": 2,
@@ -40,13 +40,13 @@
   "custom_card": {
    "likes": 27,
    "rating": 4.7,
-   "ratings": 90,
+   "ratings": 93,
    "homes": 78
   },
   "dwd_rain": {
    "likes": 4,
    "rating": 4.1,
-   "ratings": 25,
+   "ratings": 27,
    "homes": 22
   },
   "electricity_price": {
@@ -68,10 +68,10 @@
    "homes": 25
   },
   "flip_clock": {
-   "likes": 28,
+   "likes": 29,
    "rating": 4.6,
-   "ratings": 117,
-   "homes": 72
+   "ratings": 119,
+   "homes": 73
   },
   "guition_relays": {
    "likes": 4,
@@ -85,6 +85,12 @@
    "ratings": 1,
    "homes": 1
   },
+  "jellyfin": {
+   "likes": 0,
+   "rating": null,
+   "ratings": 0,
+   "homes": 1
+  },
   "new_music": {
    "likes": 8,
    "rating": 4.7,
@@ -95,7 +101,7 @@
    "likes": 0,
    "rating": null,
    "ratings": 0,
-   "homes": 6
+   "homes": 8
   },
   "ov_departures": {
    "likes": 4,
@@ -105,8 +111,8 @@
   },
   "photo_clock": {
    "likes": 2,
-   "rating": 4.5,
-   "ratings": 11,
+   "rating": 4.6,
+   "ratings": 12,
    "homes": 19
   },
   "photo_slideshow": {
@@ -116,16 +122,16 @@
    "homes": 16
   },
   "picture_frame": {
-   "likes": 3,
-   "rating": 4.5,
-   "ratings": 13,
+   "likes": 4,
+   "rating": 4.6,
+   "ratings": 14,
    "homes": 23
   },
   "plane_radar": {
    "likes": 1,
    "rating": 4.7,
    "ratings": 6,
-   "homes": 7
+   "homes": 8
   },
   "pollen": {
    "likes": 1,
@@ -141,21 +147,21 @@
   },
   "screen_camera": {
    "likes": 8,
-   "rating": 4.6,
-   "ratings": 29,
-   "homes": 48
+   "rating": 4.5,
+   "ratings": 31,
+   "homes": 52
   },
   "select_buttons": {
    "likes": 0,
    "rating": null,
    "ratings": 0,
-   "homes": 3
+   "homes": 4
   },
   "status_tile": {
    "likes": 8,
    "rating": 4.6,
-   "ratings": 42,
-   "homes": 48
+   "ratings": 44,
+   "homes": 49
   },
   "sweden_public_transport": {
    "likes": 0,
@@ -172,20 +178,20 @@
   "tap_sound": {
    "likes": 2,
    "rating": 4.5,
-   "ratings": 12,
+   "ratings": 13,
    "homes": 19
   },
   "thermo_dial": {
-   "likes": 10,
+   "likes": 11,
    "rating": 4.6,
-   "ratings": 28,
-   "homes": 35
+   "ratings": 29,
+   "homes": 36
   },
   "timers": {
    "likes": 7,
    "rating": 4.5,
-   "ratings": 32,
-   "homes": 36
+   "ratings": 34,
+   "homes": 37
   },
   "toothbrush": {
    "likes": 2,
@@ -197,7 +203,7 @@
    "likes": 2,
    "rating": 4.8,
    "ratings": 5,
-   "homes": 12
+   "homes": 14
   },
   "voice_assist": {
    "likes": 15,
@@ -206,16 +212,16 @@
    "homes": 40
   },
   "waste_collection": {
-   "likes": 16,
+   "likes": 17,
    "rating": 4.5,
-   "ratings": 47,
+   "ratings": 50,
    "homes": 43
   },
   "waste_overview": {
    "likes": 5,
    "rating": 4.4,
    "ratings": 28,
-   "homes": 17
+   "homes": 18
   },
   "waze_traveltime": {
    "likes": 4,
