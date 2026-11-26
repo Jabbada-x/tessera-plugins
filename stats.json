@@ -35,7 +35,7 @@
    "likes": 29,
    "rating": 4.7,
    "ratings": 97,
-   "homes": 81
+   "homes": 80
   },
   "dwd_rain": {
    "likes": 5,
@@ -57,8 +57,8 @@
   },
   "energy_flow": {
    "likes": 17,
-   "rating": 4.4,
-   "ratings": 20,
+   "rating": 4.3,
+   "ratings": 21,
    "homes": 26
   },
   "flip_clock": {
@@ -83,13 +83,13 @@
    "likes": 0,
    "rating": null,
    "ratings": 0,
-   "homes": 3
+   "homes": 4
   },
   "new_music": {
    "likes": 8,
    "rating": 4.7,
    "ratings": 16,
-   "homes": 21
+   "homes": 22
   },
   "ora": {
    "likes": 1,
@@ -124,8 +124,8 @@
   "plane_radar": {
    "likes": 1,
    "rating": 4.8,
-   "ratings": 10,
-   "homes": 10
+   "ratings": 11,
+   "homes": 11
   },
   "pollen": {
    "likes": 1,
@@ -143,13 +143,13 @@
    "likes": 11,
    "rating": 4.5,
    "ratings": 36,
-   "homes": 57
+   "homes": 58
   },
   "select_buttons": {
    "likes": 1,
    "rating": null,
    "ratings": 0,
-   "homes": 7
+   "homes": 8
   },
   "status_tile": {
    "likes": 8,
@@ -184,14 +184,14 @@
   "thermo_dial": {
    "likes": 11,
    "rating": 4.6,
-   "ratings": 31,
-   "homes": 38
+   "ratings": 32,
+   "homes": 39
   },
   "timers": {
    "likes": 7,
    "rating": 4.6,
    "ratings": 36,
-   "homes": 37
+   "homes": 36
   },
   "toothbrush": {
    "likes": 2,
@@ -200,16 +200,16 @@
    "homes": 8
   },
   "vinyl_deck": {
-   "likes": 2,
+   "likes": 3,
    "rating": 4.8,
-   "ratings": 5,
+   "ratings": 6,
    "homes": 15
   },
   "voice_assist": {
    "likes": 15,
-   "rating": 4.4,
-   "ratings": 43,
-   "homes": 43
+   "rating": 4.5,
+   "ratings": 44,
+   "homes": 42
   },
   "waste_collection": {
    "likes": 16,
@@ -221,7 +221,7 @@
    "likes": 5,
    "rating": 4.4,
    "ratings": 30,
-   "homes": 19
+   "homes": 20
   },
   "waze_traveltime": {
    "likes": 4,
@@ -239,7 +239,7 @@
    "likes": 7,
    "rating": 4.6,
    "ratings": 18,
-   "homes": 12
+   "homes": 13
   },
   "world_clock": {
    "likes": 4,
