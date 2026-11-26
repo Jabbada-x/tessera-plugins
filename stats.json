@@ -23,7 +23,7 @@
    "likes": 5,
    "rating": 4.2,
    "ratings": 21,
-   "homes": 26
+   "homes": 27
   },
   "cinema": {
    "likes": 2,
@@ -64,14 +64,14 @@
   "flip_clock": {
    "likes": 29,
    "rating": 4.6,
-   "ratings": 122,
-   "homes": 75
+   "ratings": 123,
+   "homes": 76
   },
   "guition_relays": {
    "likes": 5,
    "rating": 5,
    "ratings": 32,
-   "homes": 21
+   "homes": 22
   },
   "ha_task_list": {
    "likes": 0,
@@ -93,8 +93,8 @@
   },
   "ora": {
    "likes": 1,
-   "rating": null,
-   "ratings": 1,
+   "rating": 4.3,
+   "ratings": 3,
    "homes": 11
   },
   "ov_departures": {
@@ -123,8 +123,8 @@
   },
   "plane_radar": {
    "likes": 1,
-   "rating": 4.7,
-   "ratings": 7,
+   "rating": 4.8,
+   "ratings": 8,
    "homes": 9
   },
   "pollen": {
@@ -140,7 +140,7 @@
    "homes": 2
   },
   "screen_camera": {
-   "likes": 9,
+   "likes": 10,
    "rating": 4.5,
    "ratings": 35,
    "homes": 55
@@ -214,14 +214,14 @@
   "waste_collection": {
    "likes": 16,
    "rating": 4.5,
-   "ratings": 51,
+   "ratings": 52,
    "homes": 45
   },
   "waste_overview": {
    "likes": 5,
    "rating": 4.4,
-   "ratings": 29,
-   "homes": 18
+   "ratings": 30,
+   "homes": 19
   },
   "waze_traveltime": {
    "likes": 4,
