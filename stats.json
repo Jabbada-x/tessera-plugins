@@ -5,7 +5,7 @@
    "likes": 2,
    "rating": 4.5,
    "ratings": 8,
-   "homes": 18
+   "homes": 19
   },
   "av_wall_panel_controls": {
    "likes": 0,
@@ -38,7 +38,7 @@
    "homes": 81
   },
   "dwd_rain": {
-   "likes": 4,
+   "likes": 5,
    "rating": 4.1,
    "ratings": 27,
    "homes": 23
@@ -64,20 +64,20 @@
   "flip_clock": {
    "likes": 30,
    "rating": 4.6,
-   "ratings": 129,
-   "homes": 76
+   "ratings": 131,
+   "homes": 77
   },
   "guition_relays": {
    "likes": 6,
    "rating": 5,
-   "ratings": 33,
+   "ratings": 34,
    "homes": 22
   },
   "ha_task_list": {
    "likes": 0,
    "rating": null,
    "ratings": 1,
-   "homes": 2
+   "homes": 3
   },
   "jellyfin": {
    "likes": 0,
@@ -95,7 +95,7 @@
    "likes": 1,
    "rating": 4.3,
    "ratings": 3,
-   "homes": 11
+   "homes": 13
   },
   "ov_departures": {
    "likes": 4,
@@ -124,7 +124,7 @@
   "plane_radar": {
    "likes": 1,
    "rating": 4.8,
-   "ratings": 9,
+   "ratings": 10,
    "homes": 10
   },
   "pollen": {
@@ -149,7 +149,7 @@
    "likes": 1,
    "rating": null,
    "ratings": 0,
-   "homes": 6
+   "homes": 7
   },
   "status_tile": {
    "likes": 8,
@@ -184,7 +184,7 @@
   "thermo_dial": {
    "likes": 11,
    "rating": 4.6,
-   "ratings": 30,
+   "ratings": 31,
    "homes": 38
   },
   "timers": {
@@ -203,18 +203,18 @@
    "likes": 2,
    "rating": 4.8,
    "ratings": 5,
-   "homes": 14
+   "homes": 15
   },
   "voice_assist": {
    "likes": 15,
-   "rating": 4.5,
-   "ratings": 41,
+   "rating": 4.4,
+   "ratings": 43,
    "homes": 43
   },
   "waste_collection": {
    "likes": 16,
    "rating": 4.5,
-   "ratings": 54,
+   "ratings": 55,
    "homes": 47
   },
   "waste_overview": {
@@ -237,8 +237,8 @@
   },
   "wifi_qr": {
    "likes": 7,
-   "rating": 4.5,
-   "ratings": 17,
+   "rating": 4.6,
+   "ratings": 18,
    "homes": 12
   },
   "world_clock": {
