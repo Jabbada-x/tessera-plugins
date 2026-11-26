@@ -4,8 +4,8 @@
   "air_quality": {
    "likes": 2,
    "rating": 4.7,
-   "ratings": 6,
-   "homes": 17
+   "ratings": 7,
+   "homes": 18
   },
   "av_wall_panel_controls": {
    "likes": 0,
@@ -32,16 +32,16 @@
    "homes": 3
   },
   "custom_card": {
-   "likes": 27,
+   "likes": 28,
    "rating": 4.7,
-   "ratings": 93,
-   "homes": 80
+   "ratings": 94,
+   "homes": 81
   },
   "dwd_rain": {
    "likes": 4,
    "rating": 4.1,
    "ratings": 27,
-   "homes": 22
+   "homes": 23
   },
   "electricity_price": {
    "likes": 5,
@@ -88,8 +88,8 @@
   "new_music": {
    "likes": 8,
    "rating": 4.7,
-   "ratings": 14,
-   "homes": 21
+   "ratings": 15,
+   "homes": 22
   },
   "ora": {
    "likes": 1,
@@ -124,8 +124,8 @@
   "plane_radar": {
    "likes": 1,
    "rating": 4.7,
-   "ratings": 6,
-   "homes": 8
+   "ratings": 7,
+   "homes": 9
   },
   "pollen": {
    "likes": 1,
@@ -154,8 +154,8 @@
   "status_tile": {
    "likes": 8,
    "rating": 4.6,
-   "ratings": 44,
-   "homes": 51
+   "ratings": 45,
+   "homes": 52
   },
   "sweden_public_transport": {
    "likes": 0,
@@ -185,7 +185,7 @@
    "likes": 11,
    "rating": 4.6,
    "ratings": 29,
-   "homes": 37
+   "homes": 38
   },
   "timers": {
    "likes": 7,
@@ -209,7 +209,7 @@
    "likes": 15,
    "rating": 4.5,
    "ratings": 41,
-   "homes": 40
+   "homes": 41
   },
   "waste_collection": {
    "likes": 17,
