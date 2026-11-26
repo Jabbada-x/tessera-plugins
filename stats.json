@@ -3,8 +3,8 @@
  "plugins": {
   "air_quality": {
    "likes": 2,
-   "rating": 4.7,
-   "ratings": 7,
+   "rating": 4.5,
+   "ratings": 8,
    "homes": 18
   },
   "av_wall_panel_controls": {
@@ -20,7 +20,7 @@
    "homes": 21
   },
   "buienradar": {
-   "likes": 5,
+   "likes": 6,
    "rating": 4.2,
    "ratings": 21,
    "homes": 27
@@ -34,14 +34,14 @@
   "custom_card": {
    "likes": 29,
    "rating": 4.7,
-   "ratings": 95,
+   "ratings": 97,
    "homes": 81
   },
   "dwd_rain": {
    "likes": 4,
    "rating": 4.1,
    "ratings": 27,
-   "homes": 22
+   "homes": 23
   },
   "electricity_price": {
    "likes": 5,
@@ -56,34 +56,34 @@
    "homes": 4
   },
   "energy_flow": {
-   "likes": 16,
+   "likes": 17,
    "rating": 4.4,
-   "ratings": 19,
-   "homes": 25
+   "ratings": 20,
+   "homes": 26
   },
   "flip_clock": {
-   "likes": 29,
+   "likes": 30,
    "rating": 4.6,
-   "ratings": 123,
+   "ratings": 129,
    "homes": 76
   },
   "guition_relays": {
-   "likes": 5,
+   "likes": 6,
    "rating": 5,
-   "ratings": 32,
+   "ratings": 33,
    "homes": 22
   },
   "ha_task_list": {
    "likes": 0,
    "rating": null,
    "ratings": 1,
-   "homes": 1
+   "homes": 2
   },
   "jellyfin": {
    "likes": 0,
    "rating": null,
    "ratings": 0,
-   "homes": 2
+   "homes": 3
   },
   "new_music": {
    "likes": 8,
@@ -106,7 +106,7 @@
   "photo_clock": {
    "likes": 2,
    "rating": 4.6,
-   "ratings": 12,
+   "ratings": 13,
    "homes": 19
   },
   "photo_slideshow": {
@@ -124,8 +124,8 @@
   "plane_radar": {
    "likes": 1,
    "rating": 4.8,
-   "ratings": 8,
-   "homes": 9
+   "ratings": 9,
+   "homes": 10
   },
   "pollen": {
    "likes": 1,
@@ -140,13 +140,13 @@
    "homes": 2
   },
   "screen_camera": {
-   "likes": 10,
+   "likes": 11,
    "rating": 4.5,
-   "ratings": 35,
-   "homes": 55
+   "ratings": 36,
+   "homes": 57
   },
   "select_buttons": {
-   "likes": 0,
+   "likes": 1,
    "rating": null,
    "ratings": 0,
    "homes": 6
@@ -159,8 +159,8 @@
   },
   "sweden_public_transport": {
    "likes": 0,
-   "rating": null,
-   "ratings": 2,
+   "rating": 3.7,
+   "ratings": 3,
    "homes": 1
   },
   "swiss_departures": {
@@ -171,15 +171,15 @@
   },
   "tankerkoenig": {
    "likes": 5,
-   "rating": 3.6,
-   "ratings": 5,
+   "rating": 3.8,
+   "ratings": 6,
    "homes": 5
   },
   "tap_sound": {
    "likes": 2,
-   "rating": 4.5,
-   "ratings": 13,
-   "homes": 19
+   "rating": 4.6,
+   "ratings": 14,
+   "homes": 20
   },
   "thermo_dial": {
    "likes": 11,
@@ -209,13 +209,13 @@
    "likes": 15,
    "rating": 4.5,
    "ratings": 41,
-   "homes": 41
+   "homes": 43
   },
   "waste_collection": {
    "likes": 16,
    "rating": 4.5,
-   "ratings": 52,
-   "homes": 45
+   "ratings": 54,
+   "homes": 47
   },
   "waste_overview": {
    "likes": 5,
@@ -244,7 +244,7 @@
   "world_clock": {
    "likes": 4,
    "rating": 4.6,
-   "ratings": 19,
+   "ratings": 21,
    "homes": 20
   }
  }
