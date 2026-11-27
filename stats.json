@@ -22,7 +22,7 @@
   "buienradar": {
    "likes": 6,
    "rating": 4.2,
-   "ratings": 21,
+   "ratings": 22,
    "homes": 26
   },
   "cinema": {
@@ -47,7 +47,7 @@
    "likes": 5,
    "rating": 4.1,
    "ratings": 27,
-   "homes": 23
+   "homes": 22
   },
   "electricity_price": {
    "likes": 5,
@@ -65,13 +65,13 @@
    "likes": 17,
    "rating": 4.3,
    "ratings": 21,
-   "homes": 27
+   "homes": 28
   },
   "flip_clock": {
    "likes": 30,
    "rating": 4.6,
    "ratings": 131,
-   "homes": 75
+   "homes": 74
   },
   "guition_relays": {
    "likes": 6,
@@ -83,7 +83,7 @@
    "likes": 0,
    "rating": null,
    "ratings": 1,
-   "homes": 3
+   "homes": 4
   },
   "jellyfin": {
    "likes": 0,
@@ -94,7 +94,7 @@
   "new_music": {
    "likes": 8,
    "rating": 4.7,
-   "ratings": 16,
+   "ratings": 17,
    "homes": 22
   },
   "ora": {
@@ -125,7 +125,7 @@
    "likes": 4,
    "rating": 4.6,
    "ratings": 14,
-   "homes": 23
+   "homes": 24
   },
   "plane_radar": {
    "likes": 1,
@@ -149,13 +149,13 @@
    "likes": 11,
    "rating": 4.5,
    "ratings": 36,
-   "homes": 58
+   "homes": 57
   },
   "select_buttons": {
    "likes": 1,
    "rating": null,
    "ratings": 0,
-   "homes": 8
+   "homes": 9
   },
   "status_tile": {
    "likes": 8,
@@ -196,8 +196,8 @@
   "timers": {
    "likes": 7,
    "rating": 4.6,
-   "ratings": 36,
-   "homes": 36
+   "ratings": 37,
+   "homes": 37
   },
   "toothbrush": {
    "likes": 2,
@@ -215,19 +215,19 @@
    "likes": 15,
    "rating": 4.5,
    "ratings": 44,
-   "homes": 42
+   "homes": 41
   },
   "waste_collection": {
    "likes": 16,
    "rating": 4.5,
    "ratings": 56,
-   "homes": 47
+   "homes": 49
   },
   "waste_overview": {
    "likes": 5,
    "rating": 4.4,
    "ratings": 30,
-   "homes": 20
+   "homes": 21
   },
   "waze_traveltime": {
    "likes": 4,
@@ -244,14 +244,14 @@
   "wifi_qr": {
    "likes": 7,
    "rating": 4.6,
-   "ratings": 18,
+   "ratings": 19,
    "homes": 15
   },
   "world_clock": {
    "likes": 4,
    "rating": 4.6,
    "ratings": 21,
-   "homes": 20
+   "homes": 19
   }
  }
 }
