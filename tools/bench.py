@@ -24,6 +24,7 @@ import os
 import re
 import shlex
 import sys
+import tempfile
 import time
 from datetime import datetime
 from pathlib import Path
@@ -203,6 +204,14 @@ BENCH_ACTIONS = '''    - action: render_settings
             ESP_LOGI("render", "audit end");
 '''
 
+def has_psram(tree, item):
+    """Whether the board has PSRAM: a `psram:` block somewhere in the packages its file includes."""
+    with tempfile.TemporaryDirectory() as scratch:
+        chain = host.Chain()
+        host.walk(tree, tree / 'packages' / 'boards' / item.file, Path(scratch), chain)
+    return any(note.endswith('dropped psram:') for note in chain.notes)
+
+
 class BenchBuild(host.Build):
     """Tessera's host build of a board with the plugin in it, the bench's actions beside the harness's own, and for a
     glass no board has the board's sizes, density, look and grids replaced in its mirror (`glass`: {'PANEL_W': '800',
@@ -211,6 +220,11 @@ class BenchBuild(host.Build):
     def __init__(self, item, glass=None, window=False, **kw):
         super().__init__(item, **kw)
         self.glass, self.window = dict(glass or {}), window
+        # A board with PSRAM keeps its pictures in a store and its pages beside the one on the glass, and Tessera's host
+        # build does so only when told (KEPT_PAGES_HOST, its docs/KEPT_PAGES.md): without it the program keeps one
+        # download at a time, so a page of several tiles with a picture shows only the last one that came.
+        if has_psram(self.tree, item) and os.environ.get('KEPT_PAGES_HOST') != '1':
+            self.defines += ('KEPT_PAGES_HOST=1',)
 
     def package(self):
         text = super().package()
@@ -836,6 +850,11 @@ class Bench(run.Run):
                 raws.append(None)
                 continue
             file = named.get(url) if isinstance(named, dict) else None
+            if not file and isinstance(named, dict) and getattr(source, 'kind', '') in ('entity', 'cover', 'camera'):
+                # One of the core's own sources for an entity (plugin API 0.17): the app takes the entity's own picture,
+                # so preview.yaml's file for the `entity_picture` of its state stands in for it.
+                own = (self.states.get(getattr(source, 'ref', '')) or {}).get('attributes', {}).get('entity_picture')
+                file = named.get(own) if isinstance(own, str) else None
             if url.startswith(SAVER_PICTURE):
                 shown = self.saver_shown or {}
                 raws.append((self.args.plugin.resolve() / str(shown['picture'])).read_bytes() if shown.get('picture')

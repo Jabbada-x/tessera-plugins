@@ -236,8 +236,10 @@ time_zone: Europe/Amsterdam    # the zone of the moments below (default Europe/A
   `permissions.network`, never Home Assistant's own.
 - **Pictures** (plugin API 0.10, [FIRMWARE_API.md](FIRMWARE_API.md), "Pictures on a tile"): the bench answers a tile's
   question for its places as the app would, with the file `pictures` names for each address, relative to the plugin's
-  folder (a small JPEG or PNG; nothing is fetched from the internet). An address without a file gets a drawn picture,
-  with a note. The app's own checks hold here too: a tile without `pictures` in the manifest, or an address on a host
+  folder (a small JPEG or PNG; nothing is fetched from the internet). One of the core's own sources for an entity
+  (`entity:person.alex`, `cover:`, `camera:`) gets the file named for the `entity_picture` of that entity under
+  `states`, or for the source itself. An address without a file gets a drawn picture, with a note. A board with PSRAM
+  is built with its picture store, as that board runs, so a page shows the pictures of all its tiles. The app's own checks hold here too: a tile without `pictures` in the manifest, or an address on a host
   `permissions.network` does not name, gets a warning and no picture.
 - Never put a secret here: the file is shared with your plugin.
 

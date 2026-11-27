@@ -1,17 +1,26 @@
-# What tools/preview.py shows (docs/PREVIEW.md): a poster at an address, cover and contain, and a person's own picture.
-# The pictures come from the files below, never from the internet.
+# What tools/preview.py shows (docs/PREVIEW.md): photos at an address, cover and contain, and a person's own picture (the
+# `entity_picture` of its state).
+# The pictures come from the files below, never from the internet. They are photos from Unsplash, free to use under
+# the Unsplash License (https://unsplash.com/license): the lake by Adam Vradenburg, the house by Omri D. Cohen and
+# the portrait by Michael Dam.
 tiles:
   - tile: picture
-    name: Tonight
-    options: { url: "https://image.tmdb.org/t/p/w342/poster.jpg" }
+    name: Lake
+    options: { url: "https://images.unsplash.com/photo-1559310589-2673bfe16970" }
+    # Not the flat strips (3x1, 4x1) and the tall ones: a photo cut to a strip is not what a frame is for.
+    sizes: [1x1, 2x1, 1x2, 2x2, 3x2, 2x3, 3x3]
   - tile: picture
-    name: Whole poster
-    options: { url: "https://image.tmdb.org/t/p/w342/poster.jpg", fit: contain }
-    sizes: [2x2]
+    name: Front yard
+    options: { url: "https://images.unsplash.com/photo-1631149784601-8e6c266b046a" }
+    sizes: [2x2, 2x1]
   - tile: picture
     name: Alex
     entity: person.alex
     sizes: [1x1, 2x2]
+  - tile: picture
+    name: Whole photo
+    options: { url: "https://images.unsplash.com/photo-1631149784601-8e6c266b046a", fit: contain }
+    sizes: [2x2]
 
 states:
   person.alex:
@@ -19,5 +28,6 @@ states:
     attributes: { friendly_name: Alex, entity_picture: /api/image/serve/abc123/512x512 }
 
 pictures:
-  "https://image.tmdb.org/t/p/w342/poster.jpg": preview/poster.jpg
-  "/api/image/serve/abc123/512x512": preview/poster.jpg
+  "https://images.unsplash.com/photo-1559310589-2673bfe16970": preview/lake.jpg
+  "https://images.unsplash.com/photo-1631149784601-8e6c266b046a": preview/front_yard.jpg
+  "/api/image/serve/abc123/512x512": preview/alex.jpg
