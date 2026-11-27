@@ -2,9 +2,9 @@
  "format": 1,
  "plugins": {
   "air_quality": {
-   "likes": 2,
-   "rating": 4.5,
-   "ratings": 8,
+   "likes": 3,
+   "rating": 4.3,
+   "ratings": 9,
    "homes": 19
   },
   "av_wall_panel_controls": {
@@ -15,9 +15,9 @@
   },
   "bt_proxy": {
    "likes": 2,
-   "rating": 4.6,
-   "ratings": 17,
-   "homes": 21
+   "rating": 4.7,
+   "ratings": 18,
+   "homes": 22
   },
   "buienradar": {
    "likes": 6,
@@ -40,7 +40,7 @@
   "custom_card": {
    "likes": 29,
    "rating": 4.7,
-   "ratings": 97,
+   "ratings": 98,
    "homes": 80
   },
   "dwd_rain": {
@@ -65,13 +65,13 @@
    "likes": 17,
    "rating": 4.3,
    "ratings": 21,
-   "homes": 28
+   "homes": 29
   },
   "flip_clock": {
    "likes": 30,
    "rating": 4.6,
    "ratings": 131,
-   "homes": 74
+   "homes": 73
   },
   "guition_relays": {
    "likes": 6,
@@ -125,13 +125,13 @@
    "likes": 4,
    "rating": 4.6,
    "ratings": 14,
-   "homes": 24
+   "homes": 25
   },
   "plane_radar": {
    "likes": 1,
    "rating": 4.8,
-   "ratings": 11,
-   "homes": 11
+   "ratings": 12,
+   "homes": 12
   },
   "pollen": {
    "likes": 1,
@@ -143,25 +143,25 @@
    "likes": 2,
    "rating": 3.3,
    "ratings": 3,
-   "homes": 2
+   "homes": 3
   },
   "screen_camera": {
    "likes": 11,
    "rating": 4.5,
-   "ratings": 36,
-   "homes": 57
+   "ratings": 37,
+   "homes": 58
   },
   "select_buttons": {
    "likes": 1,
    "rating": null,
    "ratings": 0,
-   "homes": 9
+   "homes": 10
   },
   "status_tile": {
    "likes": 8,
    "rating": 4.6,
    "ratings": 46,
-   "homes": 52
+   "homes": 51
   },
   "sweden_public_transport": {
    "likes": 0,
@@ -190,32 +190,32 @@
   "thermo_dial": {
    "likes": 11,
    "rating": 4.6,
-   "ratings": 32,
-   "homes": 39
+   "ratings": 33,
+   "homes": 38
   },
   "timers": {
    "likes": 7,
    "rating": 4.6,
    "ratings": 37,
-   "homes": 37
+   "homes": 36
   },
   "toothbrush": {
    "likes": 2,
    "rating": 4.4,
-   "ratings": 7,
+   "ratings": 8,
    "homes": 8
   },
   "vinyl_deck": {
    "likes": 3,
-   "rating": 4.8,
-   "ratings": 6,
-   "homes": 15
+   "rating": 4.9,
+   "ratings": 7,
+   "homes": 16
   },
   "voice_assist": {
    "likes": 15,
    "rating": 4.5,
    "ratings": 44,
-   "homes": 41
+   "homes": 42
   },
   "waste_collection": {
    "likes": 16,
@@ -226,7 +226,7 @@
   "waste_overview": {
    "likes": 5,
    "rating": 4.4,
-   "ratings": 30,
+   "ratings": 31,
    "homes": 21
   },
   "waze_traveltime": {
