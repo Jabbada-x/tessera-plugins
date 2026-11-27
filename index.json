@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-26T02:54:20Z",
+ "generated": "2026-11-27T06:08:29Z",
  "plugin_api": "0.29",
  "blocked": [],
  "featured": [
@@ -2487,8 +2487,8 @@
    "status": "ok",
    "release": {
     "version": "0.2.0",
-    "sha": "3b4aeeec25033f64c4f1a2b44b21e1d6098e4cb3",
-    "date": "2026-10-20"
+    "sha": "f5d7da68d5f6d54de382741b1aaea47dfdb2a034",
+    "date": "2026-11-27"
    },
    "manifest": {
     "id": "picture_frame",
@@ -2611,7 +2611,8 @@
    },
    "changelog": {
     "en": "# Changelog\n\n## 0.2.0\n- What a media player plays now shows on the tile: the picture comes through Home Assistant's own proxy for the\n  player, as the screen's media card has it (before, a player's picture address was refused). An image entity and a\n  person show their own picture the same way (plugin API 0.17). Where a picture does not come, \"No picture\" stands in\n  the middle of the tile. Needs a screen with plugin API 0.17.\n- A camera too: its picture on any screen with pictures, and live on the screens that stream (the ESP32-P4 boards),\n  with the option Live camera (on by default). The name is not drawn over a live camera.\n\n## 0.1.0\n- First version: a tile that shows one picture, an entity's own or one at an address, cover or contain, with the\n  tile's name over it. Needs a screen with plugin API 0.10.\n"
-   }
+   },
+   "image": "store.png"
   },
   {
    "id": "plane_radar",
