@@ -4,7 +4,7 @@
   "air_quality": {
    "likes": 3,
    "rating": 4.4,
-   "ratings": 10,
+   "ratings": 11,
    "homes": 20
   },
   "av_wall_panel_controls": {
@@ -57,8 +57,8 @@
   },
   "electricity_price": {
    "likes": 6,
-   "rating": 4.5,
-   "ratings": 13,
+   "rating": 4.6,
+   "ratings": 14,
    "homes": 11
   },
   "energidata_price": {
@@ -68,16 +68,16 @@
    "homes": 5
   },
   "energy_flow": {
-   "likes": 17,
-   "rating": 4.3,
-   "ratings": 21,
-   "homes": 30
+   "likes": 18,
+   "rating": 4.4,
+   "ratings": 22,
+   "homes": 31
   },
   "flip_clock": {
    "likes": 31,
    "rating": 4.6,
    "ratings": 132,
-   "homes": 75
+   "homes": 74
   },
   "guition_relays": {
    "likes": 6,
@@ -101,7 +101,7 @@
    "likes": 8,
    "rating": 4.7,
    "ratings": 17,
-   "homes": 22
+   "homes": 23
   },
   "ora": {
    "likes": 3,
@@ -155,7 +155,7 @@
    "likes": 11,
    "rating": 4.6,
    "ratings": 38,
-   "homes": 59
+   "homes": 60
   },
   "select_buttons": {
    "likes": 1,
@@ -164,9 +164,9 @@
    "homes": 10
   },
   "status_tile": {
-   "likes": 8,
+   "likes": 9,
    "rating": 4.6,
-   "ratings": 47,
+   "ratings": 48,
    "homes": 52
   },
   "sweden_public_transport": {
@@ -196,8 +196,8 @@
   "thermo_dial": {
    "likes": 11,
    "rating": 4.5,
-   "ratings": 36,
-   "homes": 39
+   "ratings": 37,
+   "homes": 40
   },
   "timers": {
    "likes": 8,
@@ -220,7 +220,7 @@
   "voice_assist": {
    "likes": 15,
    "rating": 4.5,
-   "ratings": 44,
+   "ratings": 45,
    "homes": 42
   },
   "waste_collection": {
